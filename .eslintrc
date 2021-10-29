@@ -1,0 +1,7 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["@react-native-community", "eslint-config-prettier"]
+}
