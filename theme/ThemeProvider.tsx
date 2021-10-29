@@ -32,7 +32,9 @@ const ThemeProvider: React.FC = ({ children }) => {
   );
   const value: ThemeContext = [state, dispatch];
   return (
-    <MavieThemeContext.Provider value={value}>{children}</MavieThemeContext.Provider>
+    <MavieThemeContext.Provider value={value}>
+      {children}
+    </MavieThemeContext.Provider>
   );
 };
 

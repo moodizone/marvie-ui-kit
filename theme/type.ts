@@ -4,7 +4,7 @@ import { ColorSchemeName, ColorValue } from "react-native";
 /**
  * Color groups. Each group have several variant with different intensity.
  */
-type Colors =
+export type Colors =
   | "red"
   | "orange"
   | "yellow"
