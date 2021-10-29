@@ -14,3 +14,6 @@ web-build/
 
 #webstorm
 .idea
+
+#logs
+*.log
