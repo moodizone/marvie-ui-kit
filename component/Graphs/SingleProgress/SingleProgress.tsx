@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 import { SingleProgressProps } from "./type";
 import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import Card from "../../Card/Card";
+import Card from "../../Card";
 import ProgressBar from "./ProgressBar";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({
