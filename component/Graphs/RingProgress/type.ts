@@ -1,29 +1,20 @@
-export interface RecordType {
-  /**
-   * Record label for presenting. It will ellipsis for more than one line.
-   */
-  title:string;
+import { ImageSourcePropType } from "react-native";
+import { LegendProps } from "../../../lib/Legend/type";
 
-  /**
-   * Label and stroke color.
-   */
-  color:string;
-
-  /**
-   * Percentage in `[0:100]` range.
-   * @default 0
-   */
-  percent:number;
-}
-export interface RingProgressType{
+export interface RingProgressType {
   /**
    * card title
    */
-  title:string;
+  title: string;
+
+  /**
+   * Image address or data [optional]
+   */
+  image?: ImageSourcePropType;
 
   /**
    * - Maximum 3 records for presenting
    * - Sum of record percentage should **NOT** be more than `100`
    */
-  records:RecordType[]
+  records: LegendProps[];
 }

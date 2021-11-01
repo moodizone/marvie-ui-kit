@@ -21,8 +21,3 @@ export interface SingleProgressProps {
    */
   percent?: number;
 }
-
-export interface ProgressBarProps {
-  color: string;
-  percent?: number;
-}

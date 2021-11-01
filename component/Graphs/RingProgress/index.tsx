@@ -1,21 +1,48 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { RingProgressType } from "./type";
-import Card from "../../Card";
-import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import Record from "./Record";
-import Text from "../../Text";
+import { Image, StyleSheet, TextStyle, View } from "react-native";
 
-const RingProgress: React.FC<RingProgressType> = ({ title, records }) => {
+import Card from "../../../lib/Card";
+import Legend from "../../../lib/Legend";
+import Text from "../../Text";
+import { RingProgressType } from "./type";
+import { useConfig } from "../../../ConfigProvier/ConfigProvider";
+import CircularProgress from "../../../lib/CircularProgress";
+
+const RingProgress: React.FC<RingProgressType> = ({
+  title,
+  records,
+  image,
+}) => {
   const { gs, colors } = useConfig();
+  const textColor: TextStyle = { color: colors.secondary.i };
 
   return (
     <Card style={[gs.flexDirection, gs.nowrap]}>
-      <View style={[styles.start, gs.mr_2]} />
-      <View style={[styles.end]}>
-        <Text style={[styles.title]}>{title}</Text>
-        {records.map(({ color, title, percent, },index) => (
-          <Record title={title} color={color} percent={percent} key={index}/>
+      <View
+        style={[
+          styles.start,
+          gs.static,
+          gs.mr_2,
+          gs.jcenter,
+          gs.acenter,
+          gs.relative,
+        ]}
+      >
+        <View style={[gs.absolute]}>
+          {image && <Image style={[styles.img]} source={image} />}
+        </View>
+        <CircularProgress records={records} mode={"stick"} />
+      </View>
+      <View style={[gs.dynamic]}>
+        <Text
+          ellipsizeMode={"tail"}
+          numberOfLines={1}
+          style={[styles.title, textColor, gs.textAlign]}
+        >
+          {title}
+        </Text>
+        {records.map(({ color, title, percent }, index) => (
+          <Legend title={title} color={color} percent={percent} key={index} />
         ))}
       </View>
     </Card>
@@ -26,16 +53,16 @@ const styles = StyleSheet.create({
   start: {
     width: 90,
     height: 90,
-    backgroundColor: "wheat",
     borderRadius: 45,
-    flexShrink: 0,
-    flexGrow: 0,
+  },
+  img: {
+    width: 30,
+    height: 30,
+    resizeMode: "contain",
   },
   title: {
-    fontSize: 18,
     fontWeight: "bold",
   },
-  end: {},
 });
 
 export default RingProgress;
