@@ -1,5 +1,5 @@
 import { ColorSchemeName, ColorValue } from "react-native";
-import { GeneralStyle } from "../style";
+import {CommonStyle, GeneralStyle} from "../style";
 
 /**
  * Color groups. Each group have several variant with different intensity.
@@ -47,7 +47,7 @@ export interface ConfigState {
    * Some common styles gather in this object for prevent duplication and easy-switch between `rtl` and `ltd`.
    * gs : general styles
    */
-  gs: GeneralStyle;
+  gs: GeneralStyle & CommonStyle;
 }
 
 export interface ConfigAction {

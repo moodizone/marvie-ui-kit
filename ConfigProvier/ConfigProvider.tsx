@@ -3,7 +3,7 @@ import React from "react";
 import { ConfigAction, ConfigContext, ConfigState, Direction } from "./type";
 import { darkPalette, lightPalette } from "./Colors";
 import { ColorSchemeName } from "react-native";
-import { LTRStyles, RTLStyles } from "../style";
+import {CommonStyles, LTRStyles, RTLStyles} from "../style";
 
 const MavieThemeContext = React.createContext<ConfigContext>(undefined);
 MavieThemeContext.displayName = "MavieThemeContext";
@@ -18,9 +18,9 @@ const themeReducer = (
     case "light":
       return { ...state, colors: lightPalette, scheme: "light" };
     case "ltr":
-      return { ...state, gs: LTRStyles, direction: "ltr" };
+      return { ...state, gs: {...LTRStyles,...CommonStyles}, direction: "ltr" };
     case "rtl":
-      return { ...state, gs: RTLStyles, direction: "rtl" };
+      return { ...state, gs: {...RTLStyles,...CommonStyles}, direction: "rtl" };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
@@ -33,7 +33,7 @@ const ConfigProvider: React.FC = ({ children }) => {
       direction: "ltr",
       scheme: "dark",
       colors: darkPalette,
-      gs: LTRStyles,
+      gs: {...LTRStyles, ...CommonStyles},
     }
   );
   const setTheme = (type: ColorSchemeName) => dispatch({ type });
