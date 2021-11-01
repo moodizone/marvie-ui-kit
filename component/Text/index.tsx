@@ -1,11 +1,15 @@
 import React from "react";
-import { StyleSheet, TextProps } from "react-native";
+import { StyleSheet, TextProps, Text as RNText } from "react-native";
 
-const Text: React.FC<TextProps> = ({ children, style, ...otherProps }) => {
+const Text: React.FC<TextProps> = ({
+  children,
+  style,
+  ...otherProps
+}) => {
   return (
-    <Text style={[styles.text, style]} {...otherProps}>
+    <RNText style={[styles.text, style]} {...otherProps}>
       {children}
-    </Text>
+    </RNText>
   );
 };
 
