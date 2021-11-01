@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from "react-native";
 
-type StyleKey =
+type GeneralStyleKey =
   | "direction"
   | "flexDirection"
   | "textAlign"
@@ -10,30 +10,35 @@ type StyleKey =
   | "pl_3"
   | "pl_4"
   | "pl_5"
-  | "pl_6"
   | "pr_0"
   | "pr_1"
   | "pr_2"
   | "pr_3"
   | "pr_4"
   | "pr_5"
-  | "pr_6"
   | "ml_0"
   | "ml_1"
   | "ml_2"
   | "ml_3"
   | "ml_4"
   | "ml_5"
-  | "ml_6"
   | "mr_0"
   | "mr_1"
   | "mr_2"
   | "mr_3"
   | "mr_4"
-  | "mr_5"
-  | "mr_6";
+  | "mr_5";
 
-export type GeneralStyle = Record<StyleKey, ViewStyle | TextStyle>;
+type CommonStyleKey = 'wrap'| 'nowrap'| 'jbetween'| 'jcenter'| 'jend'| 'jstart'| 'jaround'| 'jevenly';
+
+export type GeneralStyle = Record<GeneralStyleKey, ViewStyle | TextStyle>;
+export type CommonStyle = Record<CommonStyleKey, ViewStyle | TextStyle>;
+const _0=0;
+const _1=8;
+const _2=16;
+const _3=24;
+const _4=32;
+const _5=40;
 
 export const LTRStyles: GeneralStyle = {
   direction: { direction: "ltr" },
@@ -41,36 +46,32 @@ export const LTRStyles: GeneralStyle = {
   textAlign: { textAlign: "left" },
 
   // Padding
-  pl_0: { paddingLeft: 0 },
-  pl_1: { paddingLeft: 4 },
-  pl_2: { paddingLeft: 8 },
-  pl_3: { paddingLeft: 12 },
-  pl_4: { paddingLeft: 16 },
-  pl_5: { paddingLeft: 20 },
-  pl_6: { paddingLeft: 24 },
-  pr_0: { paddingRight: 0 },
-  pr_1: { paddingRight: 4 },
-  pr_2: { paddingRight: 8 },
-  pr_3: { paddingRight: 12 },
-  pr_4: { paddingRight: 16 },
-  pr_5: { paddingRight: 20 },
-  pr_6: { paddingRight: 24 },
+  pl_0: { paddingLeft: _0 },
+  pl_1: { paddingLeft: _1 },
+  pl_2: { paddingLeft: _2 },
+  pl_3: { paddingLeft: _3 },
+  pl_4: { paddingLeft: _4 },
+  pl_5: { paddingLeft: _5 },
+  pr_0: { paddingRight: _0 },
+  pr_1: { paddingRight: _1 },
+  pr_2: { paddingRight: _2 },
+  pr_3: { paddingRight: _3 },
+  pr_4: { paddingRight: _4 },
+  pr_5: { paddingRight: _5 },
 
   //Margin
-  ml_0: { marginLeft: 0 },
-  ml_1: { marginLeft: 4 },
-  ml_2: { marginLeft: 8 },
-  ml_3: { marginLeft: 12 },
-  ml_4: { marginLeft: 16 },
-  ml_5: { marginLeft: 20 },
-  ml_6: { marginLeft: 24 },
-  mr_0: { marginRight: 0 },
-  mr_1: { marginRight: 4 },
-  mr_2: { marginRight: 8 },
-  mr_3: { marginRight: 12 },
-  mr_4: { marginRight: 16 },
-  mr_5: { marginRight: 20 },
-  mr_6: { marginRight: 24 },
+  ml_0: { marginLeft: _0 },
+  ml_1: { marginLeft: _1 },
+  ml_2: { marginLeft: _2 },
+  ml_3: { marginLeft: _3 },
+  ml_4: { marginLeft: _4 },
+  ml_5: { marginLeft: _5 },
+  mr_0: { marginRight: _0 },
+  mr_1: { marginRight: _1 },
+  mr_2: { marginRight: _2 },
+  mr_3: { marginRight: _3 },
+  mr_4: { marginRight: _4 },
+  mr_5: { marginRight: _5 },
 };
 
 export const RTLStyles: GeneralStyle = {
@@ -79,34 +80,41 @@ export const RTLStyles: GeneralStyle = {
   textAlign: { textAlign: "right" },
 
   // Padding
-  pl_0: { paddingRight: 0 },
-  pl_1: { paddingRight: 4 },
-  pl_2: { paddingRight: 8 },
-  pl_3: { paddingRight: 12 },
-  pl_4: { paddingRight: 16 },
-  pl_5: { paddingRight: 20 },
-  pl_6: { paddingRight: 24 },
-  pr_0: { paddingLeft: 0 },
-  pr_1: { paddingLeft: 4 },
-  pr_2: { paddingLeft: 8 },
-  pr_3: { paddingLeft: 12 },
-  pr_4: { paddingLeft: 16 },
-  pr_5: { paddingLeft: 20 },
-  pr_6: { paddingLeft: 24 },
+  pl_0: { paddingRight: _0 },
+  pl_1: { paddingRight: _1 },
+  pl_2: { paddingRight: _2 },
+  pl_3: { paddingRight: _3 },
+  pl_4: { paddingRight: _4 },
+  pl_5: { paddingRight: _5 },
+  pr_0: { paddingLeft: _0 },
+  pr_1: { paddingLeft: _1 },
+  pr_2: { paddingLeft: _2 },
+  pr_3: { paddingLeft: _3 },
+  pr_4: { paddingLeft: _4 },
+  pr_5: { paddingLeft: _5 },
 
   //Margin
-  ml_0: { marginRight: 0 },
-  ml_1: { marginRight: 4 },
-  ml_2: { marginRight: 8 },
-  ml_3: { marginRight: 12 },
-  ml_4: { marginRight: 16 },
-  ml_5: { marginRight: 20 },
-  ml_6: { marginRight: 24 },
-  mr_0: { marginLeft: 0 },
-  mr_1: { marginLeft: 4 },
-  mr_2: { marginLeft: 8 },
-  mr_3: { marginLeft: 12 },
-  mr_4: { marginLeft: 16 },
-  mr_5: { marginLeft: 20 },
-  mr_6: { marginLeft: 24 },
+  ml_0: { marginRight: _0 },
+  ml_1: { marginRight: _1 },
+  ml_2: { marginRight: _2 },
+  ml_3: { marginRight: _3 },
+  ml_4: { marginRight: _4 },
+  ml_5: { marginRight: _5 },
+  mr_0: { marginLeft: _0 },
+  mr_1: { marginLeft: _1 },
+  mr_2: { marginLeft: _2},
+  mr_3: { marginLeft: _3 },
+  mr_4: { marginLeft: _4 },
+  mr_5: { marginLeft: _5 },
 };
+
+export const CommonStyles:CommonStyle ={
+  wrap:{flexWrap:"wrap"},
+  nowrap:{flexWrap:"nowrap"},
+  jbetween:{justifyContent:"space-between"},
+  jcenter:{justifyContent:"center"},
+  jend:{justifyContent:"flex-end"},
+  jstart:{justifyContent:"flex-start"},
+  jaround:{justifyContent:"space-around"},
+  jevenly:{justifyContent:"space-evenly"},
+}
