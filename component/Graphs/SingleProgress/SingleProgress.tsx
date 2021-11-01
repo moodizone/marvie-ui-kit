@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { SingleProgressProps } from "./type";
 import { useConfig } from "../../../ConfigProvier/ConfigProvider";
 import Card from "../../Card";
 import ProgressBar from "./ProgressBar";
+import Text from "../../Text";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({
   color,
@@ -13,14 +14,13 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
   title,
 }) => {
   const { colors, gs } = useConfig();
-  const backgroundColor = colors.secondary.iv;
   const textColor = colors.secondary.i;
 
   return (
-    <Card style={{ backgroundColor }}>
+    <Card>
       <View style={[styles.container, gs.flexDirection]}>
         <View style={[{ backgroundColor: color }, styles.start]}>{icon}</View>
-        <View style={[styles.end, gs.pl_6]}>
+        <View style={[styles.end, gs.pl_2]}>
           <View style={[styles.titleContainer, gs.flexDirection]}>
             <Text
               ellipsizeMode={"tail"}
@@ -28,7 +28,7 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
               style={[
                 { color: textColor },
                 styles.title,
-                gs.pr_2,
+                gs.pr_1,
                 gs.textAlign,
               ]}
             >
