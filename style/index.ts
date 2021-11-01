@@ -29,16 +29,35 @@ type GeneralStyleKey =
   | "mr_4"
   | "mr_5";
 
-type CommonStyleKey = 'wrap'| 'nowrap'| 'jbetween'| 'jcenter'| 'jend'| 'jstart'| 'jaround'| 'jevenly';
+type CommonStyleKey =
+  | "static"
+  | "dynamic"
+  | "wrap"
+  | "nowrap"
+  | "jbetween"
+  | "jcenter"
+  | "jend"
+  | "jstart"
+  | "jaround"
+  | "jevenly"
+  | "astart"
+  | "aend"
+  | "acenter"
+  | "astretch"
+  | "abaseline"
+  | "absolute"
+  | "relative"
+  | "w100"
+  | "h100";
 
 export type GeneralStyle = Record<GeneralStyleKey, ViewStyle | TextStyle>;
 export type CommonStyle = Record<CommonStyleKey, ViewStyle | TextStyle>;
-const _0=0;
-const _1=8;
-const _2=16;
-const _3=24;
-const _4=32;
-const _5=40;
+const _0 = 0;
+const _1 = 8;
+const _2 = 16;
+const _3 = 24;
+const _4 = 32;
+const _5 = 40;
 
 export const LTRStyles: GeneralStyle = {
   direction: { direction: "ltr" },
@@ -102,19 +121,29 @@ export const RTLStyles: GeneralStyle = {
   ml_5: { marginRight: _5 },
   mr_0: { marginLeft: _0 },
   mr_1: { marginLeft: _1 },
-  mr_2: { marginLeft: _2},
+  mr_2: { marginLeft: _2 },
   mr_3: { marginLeft: _3 },
   mr_4: { marginLeft: _4 },
   mr_5: { marginLeft: _5 },
 };
-
-export const CommonStyles:CommonStyle ={
-  wrap:{flexWrap:"wrap"},
-  nowrap:{flexWrap:"nowrap"},
-  jbetween:{justifyContent:"space-between"},
-  jcenter:{justifyContent:"center"},
-  jend:{justifyContent:"flex-end"},
-  jstart:{justifyContent:"flex-start"},
-  jaround:{justifyContent:"space-around"},
-  jevenly:{justifyContent:"space-evenly"},
-}
+export const CommonStyles: CommonStyle = {
+  wrap: { flexWrap: "wrap" },
+  nowrap: { flexWrap: "nowrap" },
+  jbetween: { justifyContent: "space-between" },
+  jcenter: { justifyContent: "center" },
+  jend: { justifyContent: "flex-end" },
+  jstart: { justifyContent: "flex-start" },
+  jaround: { justifyContent: "space-around" },
+  jevenly: { justifyContent: "space-evenly" },
+  astart: { alignItems: "flex-start" },
+  aend: { alignItems: "flex-end" },
+  acenter: { alignItems: "center" },
+  astretch: { alignItems: "stretch" },
+  abaseline: { alignItems: "baseline" },
+  static: { flexGrow: 0, flexShrink: 0 },
+  dynamic: { flexGrow: 1, flexShrink: 1 },
+  absolute: { position: "absolute" },
+  relative: { position: "relative" },
+  w100: { width: "100%" },
+  h100: { height: "100%" },
+};
