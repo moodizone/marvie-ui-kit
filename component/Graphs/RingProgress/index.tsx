@@ -14,8 +14,8 @@ const RingProgress: React.FC<RingProgressType> = ({ title, records }) => {
       <View style={[styles.start, gs.mr_2]} />
       <View style={[styles.end]}>
         <Text style={[styles.title]}>{title}</Text>
-        {records.map(({ color, title, percent }) => (
-          <Record title={title} color={color} percent={percent} />
+        {records.map(({ color, title, percent, },index) => (
+          <Record title={title} color={color} percent={percent} key={index}/>
         ))}
       </View>
     </Card>
