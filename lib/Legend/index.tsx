@@ -10,7 +10,7 @@ const Legend: React.FC<LegendProps> = ({ color, title }) => {
   const textColor: TextStyle = { color: colors.secondary.ii };
   const backgroundColor: ViewStyle = { backgroundColor: color };
   return (
-    <View style={[gs.flexDirection, gs.abaseline]}>
+    <View style={[gs.row, gs.abaseline]}>
       <View style={[styles.badge, backgroundColor, gs.mr_1]} />
       <Text style={[textColor, gs.textAlign]}>{title}</Text>
     </View>

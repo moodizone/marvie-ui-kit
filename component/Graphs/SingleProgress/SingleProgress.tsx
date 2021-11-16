@@ -18,7 +18,7 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
 
   return (
     <Card>
-      <View style={[gs.flexDirection, gs.nowrap, gs.flexDirection]}>
+      <View style={[gs.row, gs.nowrap]}>
         <View
           style={[
             { backgroundColor: color },
@@ -31,7 +31,7 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
           {icon}
         </View>
         <View style={[gs.dynamic, gs.jbetween, gs.pl_2]}>
-          <View style={[gs.nowrap, gs.flexDirection]}>
+          <View style={[gs.nowrap, gs.row]}>
             <Text
               ellipsizeMode={"tail"}
               numberOfLines={1}

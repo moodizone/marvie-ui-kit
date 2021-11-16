@@ -17,7 +17,7 @@ const RingProgress: React.FC<RingProgressType> = ({
   const textColor: TextStyle = { color: colors.secondary.i };
 
   return (
-    <Card style={[gs.flexDirection, gs.nowrap]}>
+    <Card style={[gs.row, gs.nowrap]}>
       <View
         style={[
           styles.start,

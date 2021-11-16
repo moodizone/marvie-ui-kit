@@ -12,16 +12,10 @@ const salad = require("../assets/images/salad.png");
 
 const Home = () => {
   const { t, setLocale, locale } = useAppTranslation();
-  const { setDirection, setTheme, direction, scheme } = useConfig();
+  const { setDirection, setTheme, direction, scheme, gs } = useConfig();
   return (
     <Container>
-      <View
-        style={{
-          marginBottom: 24,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
+      <View style={[gs.mb_3, gs.row, gs.jbetween]}>
         <Button
           title={scheme as string}
           onPress={() => setTheme(scheme === "light" ? "dark" : "light")}
@@ -39,7 +33,7 @@ const Home = () => {
           }}
         />
       </View>
-      <View style={{ marginBottom: 24 }}>
+      <View style={[gs.mb_3]}>
         <SingleProgress
           color={"#FF575F"}
           title={t("weeklyProgress")}
@@ -47,7 +41,7 @@ const Home = () => {
           percent={15}
         />
       </View>
-      <View style={{ marginBottom: 24 }}>
+      <View style={[gs.mb_3]}>
         <RingProgress
           title={t("weeklyProgress")}
           records={[
