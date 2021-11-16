@@ -4,6 +4,7 @@ import { SafeAreaView, StatusBar, Text } from "react-native";
 import Home from "./screens/Home";
 import useCachedResources from "./hooks/useCachedResources";
 import { ConfigProvider } from "./ConfigProvier/ConfigProvider";
+import { TranslationProvider } from "./locales/TranslationProvider";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -11,12 +12,14 @@ export default function App() {
     return <Text>`useCachedResources` error</Text>;
   } else {
     return (
-      <ConfigProvider>
-        <SafeAreaView>
-          <StatusBar />
-          <Home />
-        </SafeAreaView>
-      </ConfigProvider>
+      <TranslationProvider>
+        <ConfigProvider>
+          <SafeAreaView>
+            <StatusBar/>
+            <Home/>
+          </SafeAreaView>
+        </ConfigProvider>
+      </TranslationProvider>
     );
   }
 }
