@@ -11,7 +11,7 @@ const Text: React.FC<TextProps> = ({ children, style, ...otherProps }) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: "space-mono",
+    // fontFamily: "space-mono",
     fontSize: 14,
     lineHeight: 24,
   },
