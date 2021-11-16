@@ -35,11 +35,21 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
             <Text
               ellipsizeMode={"tail"}
               numberOfLines={1}
-              style={[textColor, gs.dynamic, gs.pr_1, gs.textAlign]}
+              style={[
+                textColor,
+                gs.dynamic,
+                gs.pr_1,
+                gs.textAlign,
+                styles.title,
+              ]}
             >
               {title}
             </Text>
-            <Text style={[{ color }, gs.static]}>{`${percent}%`}</Text>
+            {percent && (
+              <Text
+                style={[{ color }, gs.static, styles.percent]}
+              >{`${percent}%`}</Text>
+            )}
           </View>
           <ProgressBar color={color} percent={percent} />
         </View>
@@ -59,7 +69,6 @@ const styles = StyleSheet.create({
   },
   percent: {
     fontWeight: "bold",
-    fontSize: 14,
   },
 });
 
