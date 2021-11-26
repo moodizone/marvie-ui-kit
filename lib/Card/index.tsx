@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View, ViewProps} from "react-native";
-import {useConfig} from "../../ConfigProvier/ConfigProvider";
+import {useConfig} from "../ConfigProvider";
 
 const Card:React.FC<ViewProps> = ({children,style,...otherProps}) => {
   const { colors } = useConfig();

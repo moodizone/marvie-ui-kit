@@ -1,7 +1,7 @@
 import React from "react";
-
 import { ColorSchemeName } from "react-native";
-import { CommonStyles, LTRStyles, RTLStyles } from "../style";
+
+import { CommonStyles, LTRStyles, RTLStyles } from "../../style";
 import { ConfigAction, ConfigContext, ConfigState, Direction } from "./type";
 import { darkPalette, lightPalette } from "./Colors";
 

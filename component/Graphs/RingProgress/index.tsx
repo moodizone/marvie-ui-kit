@@ -1,12 +1,10 @@
 import React from "react";
 import { Image, StyleSheet, TextStyle, View } from "react-native";
 
-import Card from "../../../lib/Card";
-import Legend from "../../../lib/Legend";
+import { Card, Legend, CircularProgress } from "../../../lib/components";
 import Text from "../../Text";
 import { RingProgressType } from "./type";
-import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import CircularProgress from "../../../lib/CircularProgress";
+import { useConfig } from "../../../lib/ConfigProvider";
 
 const RingProgress: React.FC<RingProgressType> = ({
   title,

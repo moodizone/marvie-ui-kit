@@ -1,7 +1,7 @@
 import React from "react";
 import { ProgressBarProps } from "./type";
 import { Animated, StyleSheet, View } from "react-native";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../ConfigProvider";
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ percent = 0, color }) => {
   const { colors, gs } = useConfig();

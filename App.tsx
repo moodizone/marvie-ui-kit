@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar, Text } from "react-native";
 
 import Home from "./screens/Home";
 import useCachedResources from "./hooks/useCachedResources";
-import { ConfigProvider } from "./ConfigProvier/ConfigProvider";
+import { ConfigProvider } from "./lib/ConfigProvider";
 import { TranslationProvider } from "./locales/TranslationProvider";
 
 export default function App() {

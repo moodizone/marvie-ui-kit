@@ -4,7 +4,7 @@ import { Button, View } from "react-native";
 import ArrowUp from "../assets/icons/ArrowUp";
 import Container from "../component/Layout/Container";
 import SingleProgress from "../component/Graphs/SingleProgress/SingleProgress";
-import { useConfig } from "../ConfigProvier/ConfigProvider";
+import { useConfig } from "../lib/ConfigProvider";
 import RingProgress from "../component/Graphs/RingProgress";
 import { useAppTranslation } from "../locales/TranslationProvider";
 

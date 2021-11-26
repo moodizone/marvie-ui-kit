@@ -3,7 +3,7 @@ import { View } from "react-native";
 
 import Circle from "../Circle";
 import { CircularProgressProps } from "./type";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../ConfigProvider";
 
 const CircularProgress: React.FC<CircularProgressProps> = ({
   records = [],

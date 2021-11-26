@@ -2,9 +2,8 @@ import React from "react";
 import { StyleSheet, TextStyle, View } from "react-native";
 
 import { SingleProgressProps } from "./type";
-import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import Card from "../../../lib/Card";
-import ProgressBar from "../../../lib/ProgressBar";
+import { useConfig } from "../../../lib/ConfigProvider";
+import { ProgressBar, Card } from "../../../lib/components";
 import Text from "../../Text";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({

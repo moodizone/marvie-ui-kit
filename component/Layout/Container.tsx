@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../../lib/ConfigProvider";
 
 const Container: React.FC = ({ children, ...otherProps }) => {
   const { gs } = useConfig();

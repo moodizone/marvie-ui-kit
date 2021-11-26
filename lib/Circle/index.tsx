@@ -3,7 +3,7 @@ import Svg, { Circle as RNSCircle } from "react-native-svg";
 
 import { CircleProps } from "./type";
 import { StyleSheet, View } from "react-native";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../ConfigProvider";
 
 const Circle: React.FC<CircleProps> = ({
   circleDimension,
