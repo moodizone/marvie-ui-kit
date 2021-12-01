@@ -54,7 +54,7 @@ export interface ConfigAction {
   type: ColorSchemeName | Direction;
 }
 
-interface ConfigContextValues extends ConfigState {
+export interface ConfigContextValues extends ConfigState {
   /**
    * Change app theme
    * @param t

@@ -2,7 +2,13 @@ import React from "react";
 import { ColorSchemeName } from "react-native";
 
 import { CommonStyles, LTRStyles, RTLStyles } from "../../style";
-import { ConfigAction, ConfigContext, ConfigState, Direction } from "./type";
+import {
+  ConfigAction,
+  ConfigContext,
+  ConfigContextValues,
+  ConfigState,
+  Direction,
+} from "./type";
 import { darkPalette, lightPalette } from "./Colors";
 
 const MavieThemeContext = React.createContext<ConfigContext>(undefined);
@@ -55,13 +61,13 @@ const ConfigProvider: React.FC = ({ children }) => {
     setDirection,
   };
   return (
-      <MavieThemeContext.Provider value={value}>
-        {children}
-      </MavieThemeContext.Provider>
+    <MavieThemeContext.Provider value={value}>
+      {children}
+    </MavieThemeContext.Provider>
   );
 };
 
-const useConfig = () => {
+const useConfig = (): ConfigContextValues => {
   const context = React.useContext(MavieThemeContext);
   if (context === undefined) {
     throw new Error("`useConfig` must use within a `ConfigProvider`");
