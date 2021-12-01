@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
-import Text from "../../component/Text";
+import Text from "../Text";
 import { LegendProps } from "./type";
 import { useConfig } from "../ConfigProvider";
 

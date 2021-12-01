@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, TextStyle, View } from "react-native";
 
 import { Card, Legend, CircularProgress } from "../../../lib/components";
-import Text from "../../Text";
+import Text from "../../../lib/Text";
 import { RingProgressType } from "./type";
 import { useConfig } from "../../../lib/ConfigProvider";
 

@@ -4,7 +4,7 @@ import { StyleSheet, TextStyle, View } from "react-native";
 import { SingleProgressProps } from "./type";
 import { useConfig } from "../../../lib/ConfigProvider";
 import { ProgressBar, Card } from "../../../lib/components";
-import Text from "../../Text";
+import Text from "../../../lib/Text";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({
   color,
