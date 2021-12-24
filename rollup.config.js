@@ -41,7 +41,10 @@ export const components = {
       tsconfigOverride,
     }),
     copy({
-      targets: [{ dest: "dist", src: "./lib/package.json" }],
+      targets: [
+        { dest: "dist", src: "./lib/package.json" },
+        { dest: "dist", src: "./README.md" },
+      ],
     }),
   ],
 };
