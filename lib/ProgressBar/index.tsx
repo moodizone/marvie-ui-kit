@@ -3,7 +3,10 @@ import { ProgressBarProps } from "./type";
 import { Animated, StyleSheet, View } from "react-native";
 import { useConfig } from "../ConfigProvider";
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ percent = 0, color }) => {
+export const ProgressBar: React.FC<ProgressBarProps> = ({
+  percent = 0,
+  color,
+}) => {
   const { colors, gs } = useConfig();
   const backgroundColor = colors.primary.ii;
   const animatedWidth = React.useRef<Animated.Value>(
@@ -45,5 +48,3 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
 });
-
-export default ProgressBar;
