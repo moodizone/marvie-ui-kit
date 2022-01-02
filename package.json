@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "eject": "expo eject",
     "ios": "expo start --ios",
-    "publish": "npm run rollup && cd lib && npm publish --access public",
+    "publish": "npm run rollup && cd dist && npm publish --access public",
     "rollup": "rm -rf dist & rollup -c",
     "test": "jest --watchAll",
     "web": "expo start --web"

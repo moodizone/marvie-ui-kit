@@ -1,14 +1,24 @@
 {
   "name": "@moodizone/marvie-ui-kit",
-  "version": "0.0.2",
+  "repository": {
+    "url": "https://github.com/moodizone/marvie-ui-kit",
+    "type": "git"
+  },
+  "author": "Mahmood Alavi",
+  "description": "UI components for React Native",
+  "version": "0.0.6",
   "main": "index.js",
+  "license": "MIT",
   "module": "index.es.js",
   "types": "lib/index.d.ts",
-  "dependencies": {
-    "i18n-js": "^3.8.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
-    "react-native-svg": "12.1.1"
-  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "ui-kit",
+    "android",
+    "iOS"
+  ],
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
