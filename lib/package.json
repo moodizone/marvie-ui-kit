@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "module": "index.es.js",
-  "types": "web.d.ts",
+  "types": "lib/index.d.ts",
   "dependencies": {
     "i18n-js": "^3.8.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
