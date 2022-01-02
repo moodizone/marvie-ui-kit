@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from "react-native";
 
-type GeneralStyleKey =
+export type GeneralStyleKey =
   | "direction"
   | "row"
   | "textAlign"
@@ -29,7 +29,7 @@ type GeneralStyleKey =
   | "mr_4"
   | "mr_5";
 
-type CommonStyleKey =
+export type CommonStyleKey =
   | "col"
   | "static"
   | "dynamic"
