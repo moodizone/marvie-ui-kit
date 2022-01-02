@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, ViewProps } from "react-native";
-import { useConfig } from "../ConfigProvider";
+import { useConfig } from "../../config";
 
 export const Card: React.FC<ViewProps> = ({
   children,

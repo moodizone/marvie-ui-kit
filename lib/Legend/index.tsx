@@ -3,7 +3,7 @@ import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
 import {Text} from "../Text";
 import { LegendProps } from "./type";
-import { useConfig } from "../ConfigProvider";
+import { useConfig } from "../../config";
 
 export const Legend: React.FC<LegendProps> = ({ color, title }) => {
   const { colors, gs } = useConfig();

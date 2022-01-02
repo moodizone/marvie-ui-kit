@@ -1,5 +1,5 @@
 import { ColorSchemeName, ColorValue } from "react-native";
-import {CommonStyle, GeneralStyle} from "../../style";
+import {CommonStyle, GeneralStyle} from "../style";
 
 /**
  * Color groups. Each group have several variant with different intensity.

@@ -1,7 +1,7 @@
 import React from "react";
 import { ColorSchemeName } from "react-native";
 
-import { CommonStyles, LTRStyles, RTLStyles } from "../../style";
+import { CommonStyles, LTRStyles, RTLStyles } from "../style";
 import {
   ConfigAction,
   ConfigContext,
@@ -9,7 +9,7 @@ import {
   ConfigState,
   Direction,
 } from "./type";
-import { darkPalette, lightPalette } from "./Colors";
+import { darkPalette, lightPalette } from "../style/Colors";
 
 const MavieThemeContext = React.createContext<ConfigContext>(undefined);
 MavieThemeContext.displayName = "MavieThemeContext";

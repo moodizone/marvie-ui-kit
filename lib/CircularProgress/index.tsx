@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 
 import { CircularProgressProps } from "./type";
-import { useConfig } from "../ConfigProvider";
+import { useConfig } from "../../config";
 import {Circle} from "../Circle";
 
 export const CircularProgress: React.FC<CircularProgressProps> = ({
