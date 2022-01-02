@@ -8,6 +8,7 @@
   "description": "UI components for React Native",
   "version": "0.0.4",
   "main": "index.js",
+  "license": "MIT",
   "module": "index.es.js",
   "types": "lib/index.d.ts",
   "keywords": [
