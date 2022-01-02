@@ -6,7 +6,7 @@
   },
   "author": "Mahmood Alavi",
   "description": "UI components for React Native",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "module": "index.es.js",
   "types": "lib/index.d.ts",
