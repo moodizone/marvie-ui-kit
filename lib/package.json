@@ -1,6 +1,12 @@
 {
   "name": "@moodizone/marvie-ui-kit",
-  "version": "0.0.2",
+  "repository": {
+    "url": "https://github.com/moodizone/marvie-ui-kit",
+    "type": "git"
+  },
+  "author": "Mahmood Alavi",
+  "description": "UI components for React Native",
+  "version": "0.0.3",
   "main": "index.js",
   "module": "index.es.js",
   "types": "lib/index.d.ts",
