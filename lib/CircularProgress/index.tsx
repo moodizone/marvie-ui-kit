@@ -1,11 +1,11 @@
 import React from "react";
 import { View } from "react-native";
 
-import Circle from "../Circle";
 import { CircularProgressProps } from "./type";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../../config";
+import {Circle} from "../Circle";
 
-const CircularProgress: React.FC<CircularProgressProps> = ({
+export const CircularProgress: React.FC<CircularProgressProps> = ({
   records = [],
   mode = "nest",
 }) => {
@@ -105,5 +105,3 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
     </View>
   );
 };
-
-export default CircularProgress;

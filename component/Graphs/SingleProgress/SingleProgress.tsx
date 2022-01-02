@@ -2,10 +2,7 @@ import React from "react";
 import { StyleSheet, TextStyle, View } from "react-native";
 
 import { SingleProgressProps } from "./type";
-import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import Card from "../../../lib/Card";
-import ProgressBar from "../../../lib/ProgressBar";
-import Text from "../../Text";
+import { ProgressBar, Card, Text, useConfig } from "../../../lib";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({
   color,
@@ -18,7 +15,7 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
 
   return (
     <Card>
-      <View style={[gs.flexDirection, gs.nowrap, gs.flexDirection]}>
+      <View style={[gs.row, gs.nowrap]}>
         <View
           style={[
             { backgroundColor: color },
@@ -31,15 +28,25 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
           {icon}
         </View>
         <View style={[gs.dynamic, gs.jbetween, gs.pl_2]}>
-          <View style={[gs.nowrap, gs.flexDirection]}>
+          <View style={[gs.nowrap, gs.row]}>
             <Text
               ellipsizeMode={"tail"}
               numberOfLines={1}
-              style={[textColor, gs.dynamic, gs.pr_1, gs.textAlign]}
+              style={[
+                textColor,
+                gs.dynamic,
+                gs.pr_1,
+                gs.textAlign,
+                styles.title,
+              ]}
             >
               {title}
             </Text>
-            <Text style={[{ color }, gs.static]}>{`${percent}%`}</Text>
+            {percent && (
+              <Text
+                style={[{ color }, gs.static, styles.percent]}
+              >{`${percent}%`}</Text>
+            )}
           </View>
           <ProgressBar color={color} percent={percent} />
         </View>
@@ -59,7 +66,6 @@ const styles = StyleSheet.create({
   },
   percent: {
     fontWeight: "bold",
-    fontSize: 14,
   },
 });
 

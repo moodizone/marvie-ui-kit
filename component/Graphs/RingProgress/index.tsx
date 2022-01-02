@@ -1,12 +1,8 @@
 import React from "react";
 import { Image, StyleSheet, TextStyle, View } from "react-native";
 
-import Card from "../../../lib/Card";
-import Legend from "../../../lib/Legend";
-import Text from "../../Text";
+import { Card, Legend, CircularProgress, Text, useConfig } from "../../../lib";
 import { RingProgressType } from "./type";
-import { useConfig } from "../../../ConfigProvier/ConfigProvider";
-import CircularProgress from "../../../lib/CircularProgress";
 
 const RingProgress: React.FC<RingProgressType> = ({
   title,
@@ -17,7 +13,7 @@ const RingProgress: React.FC<RingProgressType> = ({
   const textColor: TextStyle = { color: colors.secondary.i };
 
   return (
-    <Card style={[gs.flexDirection, gs.nowrap]}>
+    <Card style={[gs.row, gs.nowrap]}>
       <View
         style={[
           styles.start,

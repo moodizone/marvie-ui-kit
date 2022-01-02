@@ -1,21 +1,14 @@
-import React from 'react';
-import {StyleSheet, View} from "react-native";
+import React from "react";
+import { ScrollView } from "react-native";
+import { useConfig } from "../../config";
 
-const Container:React.FC = ({children,...otherProps}) => {
+const Container: React.FC = ({ children, ...otherProps }) => {
+  const { gs } = useConfig();
   return (
-    <View style={styles.container} {...otherProps}>
+    <ScrollView style={[gs.pr_3, gs.pl_3, gs.w100, gs.h100]} {...otherProps}>
       {children}
-    </View>
+    </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container:{
-    paddingLeft:24,
-    paddingRight:24,
-    width:'100%',
-    height:'100%',
-  }
-})
 
 export default Container;

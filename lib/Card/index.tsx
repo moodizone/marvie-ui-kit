@@ -1,21 +1,25 @@
-import React from 'react';
-import {StyleSheet, View, ViewProps} from "react-native";
-import {useConfig} from "../../ConfigProvier/ConfigProvider";
+import React from "react";
+import { StyleSheet, View, ViewProps } from "react-native";
+import { useConfig } from "../../config";
 
-const Card:React.FC<ViewProps> = ({children,style,...otherProps}) => {
+export const Card: React.FC<ViewProps> = ({
+  children,
+  style,
+  ...otherProps
+}) => {
   const { colors } = useConfig();
   const backgroundColor = colors.secondary.iv;
   return (
-    <View style={[styles.card, {backgroundColor},style]} {...otherProps}>
+    <View style={[styles.card, { backgroundColor }, style]} {...otherProps}>
       {children}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card:{
-    padding:24,
-    borderRadius:12,
+  card: {
+    padding: 24,
+    borderRadius: 12,
     shadowColor: "#19282F",
     shadowOffset: {
       width: 0,
@@ -25,7 +29,5 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
 
     elevation: 5,
-  }
-})
-
-export default Card;
+  },
+});

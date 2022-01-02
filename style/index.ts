@@ -1,8 +1,8 @@
 import { TextStyle, ViewStyle } from "react-native";
 
-type GeneralStyleKey =
+export type GeneralStyleKey =
   | "direction"
-  | "flexDirection"
+  | "row"
   | "textAlign"
   | "pl_0"
   | "pl_1"
@@ -29,7 +29,8 @@ type GeneralStyleKey =
   | "mr_4"
   | "mr_5";
 
-type CommonStyleKey =
+export type CommonStyleKey =
+  | "col"
   | "static"
   | "dynamic"
   | "wrap"
@@ -48,7 +49,31 @@ type CommonStyleKey =
   | "absolute"
   | "relative"
   | "w100"
-  | "h100";
+  | "h100"
+  | "pt_0"
+  | "pt_1"
+  | "pt_2"
+  | "pt_3"
+  | "pt_4"
+  | "pt_5"
+  | "pb_0"
+  | "pb_1"
+  | "pb_2"
+  | "pb_3"
+  | "pb_4"
+  | "pb_5"
+  | "mt_0"
+  | "mt_1"
+  | "mt_2"
+  | "mt_3"
+  | "mt_4"
+  | "mt_5"
+  | "mb_0"
+  | "mb_1"
+  | "mb_2"
+  | "mb_3"
+  | "mb_4"
+  | "mb_5";
 
 export type GeneralStyle = Record<GeneralStyleKey, ViewStyle | TextStyle>;
 export type CommonStyle = Record<CommonStyleKey, ViewStyle | TextStyle>;
@@ -61,7 +86,7 @@ const _5 = 40;
 
 export const LTRStyles: GeneralStyle = {
   direction: { direction: "ltr" },
-  flexDirection: { flexDirection: "row" },
+  row: { flexDirection: "row" },
   textAlign: { textAlign: "left" },
 
   // Padding
@@ -92,10 +117,9 @@ export const LTRStyles: GeneralStyle = {
   mr_4: { marginRight: _4 },
   mr_5: { marginRight: _5 },
 };
-
 export const RTLStyles: GeneralStyle = {
   direction: { direction: "rtl" },
-  flexDirection: { flexDirection: "row-reverse" },
+  row: { flexDirection: "row-reverse" },
   textAlign: { textAlign: "right" },
 
   // Padding
@@ -127,6 +151,7 @@ export const RTLStyles: GeneralStyle = {
   mr_5: { marginLeft: _5 },
 };
 export const CommonStyles: CommonStyle = {
+  col: { flexDirection: "column" },
   wrap: { flexWrap: "wrap" },
   nowrap: { flexWrap: "nowrap" },
   jbetween: { justifyContent: "space-between" },
@@ -146,4 +171,28 @@ export const CommonStyles: CommonStyle = {
   relative: { position: "relative" },
   w100: { width: "100%" },
   h100: { height: "100%" },
+  pt_0: { paddingTop: _0 },
+  pt_1: { paddingTop: _1 },
+  pt_2: { paddingTop: _2 },
+  pt_3: { paddingTop: _3 },
+  pt_4: { paddingTop: _4 },
+  pt_5: { paddingTop: _5 },
+  pb_0: { paddingTop: _0 },
+  pb_1: { paddingTop: _1 },
+  pb_2: { paddingTop: _2 },
+  pb_3: { paddingTop: _3 },
+  pb_4: { paddingTop: _4 },
+  pb_5: { paddingTop: _5 },
+  mt_0: { paddingTop: _0 },
+  mt_1: { paddingTop: _1 },
+  mt_2: { paddingTop: _2 },
+  mt_3: { paddingTop: _3 },
+  mt_4: { paddingTop: _4 },
+  mt_5: { paddingTop: _5 },
+  mb_0: { paddingTop: _0 },
+  mb_1: { paddingTop: _1 },
+  mb_2: { paddingTop: _2 },
+  mb_3: { paddingTop: _3 },
+  mb_4: { paddingTop: _4 },
+  mb_5: { paddingTop: _5 },
 };

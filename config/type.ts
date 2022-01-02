@@ -44,7 +44,7 @@ export interface ConfigState {
   direction: Direction;
 
   /**
-   * Some common styles gather in this object for prevent duplication and easy-switch between `rtl` and `ltd`.
+   * Some common styles gather in this object for prevent duplication and easy-switch between `rtl` and 'ltr'.
    * gs : general styles
    */
   gs: GeneralStyle & CommonStyle;
@@ -54,7 +54,7 @@ export interface ConfigAction {
   type: ColorSchemeName | Direction;
 }
 
-interface ConfigContextValues extends ConfigState {
+export interface ConfigContextValues extends ConfigState {
   /**
    * Change app theme
    * @param t

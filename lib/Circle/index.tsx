@@ -3,9 +3,9 @@ import Svg, { Circle as RNSCircle } from "react-native-svg";
 
 import { CircleProps } from "./type";
 import { StyleSheet, View } from "react-native";
-import { useConfig } from "../../ConfigProvier/ConfigProvider";
+import { useConfig } from "../../config";
 
-const Circle: React.FC<CircleProps> = ({
+export const Circle: React.FC<CircleProps> = ({
   circleDimension,
   strokeWidth,
   stroke,
@@ -62,5 +62,3 @@ const styles = StyleSheet.create({
     right: 0,
   },
 });
-
-export default Circle;
