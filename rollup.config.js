@@ -11,7 +11,7 @@ const tsconfigOverride = {
     declaration: true,
     declarationDir: "./types",
   },
-  include: ["lib/**/*"],
+  include: ["lib/**/*", "config/**/*", "style/**/*"],
 };
 const external = {
   ...Object.keys(pkg.dependencies),
