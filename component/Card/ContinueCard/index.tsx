@@ -7,6 +7,7 @@ import { darkPalette } from "../../../style/Colors";
 
 const dimension = 50;
 const ContinueCard: React.FC<ContinueCardProps> = ({
+  theme,
   icon,
   title,
   caption,
@@ -14,8 +15,8 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
 }) => {
   const { gs, colors } = useConfig();
   const textColor: TextStyle = { color: darkPalette.secondary.i };
-  const backgroundColor: ViewStyle = { backgroundColor: colors.green.ii };
-  const shade: ViewStyle = { backgroundColor: "#4EE5AB" };
+  const backgroundColor: ViewStyle = { backgroundColor: colors[theme].i };
+  const shade: ViewStyle = { backgroundColor: colors[theme].ii };
 
   return (
     <Card style={[backgroundColor]}>
