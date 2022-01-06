@@ -1,4 +1,4 @@
-import { ThemePalette, Palette } from "../config/type";
+import { ThemePalette, Palette } from "./type";
 
 const red: Palette = {
   i: "#ff464f",

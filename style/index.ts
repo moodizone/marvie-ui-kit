@@ -30,6 +30,9 @@ export type GeneralStyleKey =
   | "mr_5";
 
 export type CommonStyleKey =
+  | "thin"
+  | "normal"
+  | "bold"
   | "col"
   | "static"
   | "dynamic"
@@ -50,6 +53,24 @@ export type CommonStyleKey =
   | "relative"
   | "w100"
   | "h100"
+  | "p_0"
+  | "p_1"
+  | "p_2"
+  | "p_3"
+  | "p_4"
+  | "p_5"
+  | "px_0"
+  | "px_1"
+  | "px_2"
+  | "px_3"
+  | "px_4"
+  | "px_5"
+  | "py_0"
+  | "py_1"
+  | "py_2"
+  | "py_3"
+  | "py_4"
+  | "py_5"
   | "pt_0"
   | "pt_1"
   | "pt_2"
@@ -62,6 +83,24 @@ export type CommonStyleKey =
   | "pb_3"
   | "pb_4"
   | "pb_5"
+  | "m_0"
+  | "m_1"
+  | "m_2"
+  | "m_3"
+  | "m_4"
+  | "m_5"
+  | "mx_0"
+  | "mx_1"
+  | "mx_2"
+  | "mx_3"
+  | "mx_4"
+  | "mx_5"
+  | "my_0"
+  | "my_1"
+  | "my_2"
+  | "my_3"
+  | "my_4"
+  | "my_5"
   | "mt_0"
   | "mt_1"
   | "mt_2"
@@ -151,6 +190,9 @@ export const RTLStyles: GeneralStyle = {
   mr_5: { marginLeft: _5 },
 };
 export const CommonStyles: CommonStyle = {
+  thin: { fontWeight: "200" },
+  normal: { fontWeight: "normal" },
+  bold: { fontWeight: "bold" },
   col: { flexDirection: "column" },
   wrap: { flexWrap: "wrap" },
   nowrap: { flexWrap: "nowrap" },
@@ -171,28 +213,64 @@ export const CommonStyles: CommonStyle = {
   relative: { position: "relative" },
   w100: { width: "100%" },
   h100: { height: "100%" },
+  p_0: { padding: _0 },
+  p_1: { padding: _1 },
+  p_2: { padding: _2 },
+  p_3: { padding: _3 },
+  p_4: { padding: _4 },
+  p_5: { padding: _5 },
+  px_0: { paddingHorizontal: _0 },
+  px_1: { paddingHorizontal: _1 },
+  px_2: { paddingHorizontal: _2 },
+  px_3: { paddingHorizontal: _3 },
+  px_4: { paddingHorizontal: _4 },
+  px_5: { paddingHorizontal: _5 },
+  py_0: { marginVertical: _0 },
+  py_1: { marginVertical: _1 },
+  py_2: { marginVertical: _2 },
+  py_3: { marginVertical: _3 },
+  py_4: { marginVertical: _4 },
+  py_5: { marginVertical: _5 },
   pt_0: { paddingTop: _0 },
   pt_1: { paddingTop: _1 },
   pt_2: { paddingTop: _2 },
   pt_3: { paddingTop: _3 },
   pt_4: { paddingTop: _4 },
   pt_5: { paddingTop: _5 },
-  pb_0: { paddingTop: _0 },
-  pb_1: { paddingTop: _1 },
-  pb_2: { paddingTop: _2 },
-  pb_3: { paddingTop: _3 },
-  pb_4: { paddingTop: _4 },
-  pb_5: { paddingTop: _5 },
-  mt_0: { paddingTop: _0 },
-  mt_1: { paddingTop: _1 },
-  mt_2: { paddingTop: _2 },
-  mt_3: { paddingTop: _3 },
-  mt_4: { paddingTop: _4 },
-  mt_5: { paddingTop: _5 },
-  mb_0: { paddingTop: _0 },
-  mb_1: { paddingTop: _1 },
-  mb_2: { paddingTop: _2 },
-  mb_3: { paddingTop: _3 },
-  mb_4: { paddingTop: _4 },
-  mb_5: { paddingTop: _5 },
+  pb_0: { paddingBottom: _0 },
+  pb_1: { paddingBottom: _1 },
+  pb_2: { paddingBottom: _2 },
+  pb_3: { paddingBottom: _3 },
+  pb_4: { paddingBottom: _4 },
+  pb_5: { paddingBottom: _5 },
+  m_0: { margin: _0 },
+  m_1: { margin: _1 },
+  m_2: { margin: _2 },
+  m_3: { margin: _3 },
+  m_4: { margin: _4 },
+  m_5: { margin: _5 },
+  mx_0: { marginHorizontal: _0 },
+  mx_1: { marginHorizontal: _1 },
+  mx_2: { marginHorizontal: _2 },
+  mx_3: { marginHorizontal: _3 },
+  mx_4: { marginHorizontal: _4 },
+  mx_5: { marginHorizontal: _5 },
+  my_0: { marginVertical: _0 },
+  my_1: { marginVertical: _1 },
+  my_2: { marginVertical: _2 },
+  my_3: { marginVertical: _3 },
+  my_4: { marginVertical: _4 },
+  my_5: { marginVertical: _5 },
+  mt_0: { marginTop: _0 },
+  mt_1: { marginTop: _1 },
+  mt_2: { marginTop: _2 },
+  mt_3: { marginTop: _3 },
+  mt_4: { marginTop: _4 },
+  mt_5: { marginTop: _5 },
+  mb_0: { marginBottom: _0 },
+  mb_1: { marginBottom: _1 },
+  mb_2: { marginBottom: _2 },
+  mb_3: { marginBottom: _3 },
+  mb_4: { marginBottom: _4 },
+  mb_5: { marginBottom: _5 },
 };
