@@ -1,10 +1,10 @@
 import React from "react";
-import { SafeAreaView, StatusBar } from "react-native";
 
-import Home from "./screens/Home";
+import Router from "./router";
 import useCachedResources from "./hooks/useCachedResources";
-import { TranslationProvider } from "./locales/TranslationProvider";
 import { Text, ConfigProvider } from "./lib";
+import { TranslationProvider } from "./locales/TranslationProvider";
+
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -14,10 +14,7 @@ export default function App() {
     return (
       <TranslationProvider>
         <ConfigProvider>
-          <SafeAreaView>
-            <StatusBar />
-            <Home />
-          </SafeAreaView>
+         <Router/>
         </ConfigProvider>
       </TranslationProvider>
     );
