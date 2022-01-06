@@ -1,58 +1,27 @@
 import React from "react";
-import { Button, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-import ArrowUp from "../assets/icons/ArrowUp";
-import Container from "../component/Layout/Container";
-import SingleProgress from "../component/Graphs/SingleProgress/SingleProgress";
-import { useConfig } from "../config";
-import RingProgress from "../component/Graphs/RingProgress";
+import Layout from "../layout";
 import { useAppTranslation } from "../locales/TranslationProvider";
-
-const salad = require("../assets/images/salad.png");
+import { useConfig } from "../config";
+import { Text } from "../lib";
+import { ROUTES } from "../router/ROUTES";
 
 const Home = () => {
-  const { t, setLocale, locale } = useAppTranslation();
-  const { setDirection, setTheme, direction, scheme, gs } = useConfig();
+  const { t } = useAppTranslation();
+  const { gs } = useConfig();
+  const navigation = useNavigation();
   return (
-    <Container>
-      <View style={[gs.mb_3, gs.row, gs.jbetween]}>
-        <Button
-          title={scheme as string}
-          onPress={() => setTheme(scheme === "light" ? "dark" : "light")}
-        />
-        <Button
-          title={direction}
-          onPress={() => {
-            setDirection(direction === "ltr" ? "rtl" : "ltr");
-          }}
-        />
-        <Button
-          title={locale}
-          onPress={() => {
-            setLocale(locale === "en" ? "fa" : "en");
-          }}
-        />
-      </View>
-      <View style={[gs.mb_3]}>
-        <SingleProgress
-          color={"#FF575F"}
-          title={t("weeklyProgress")}
-          icon={<ArrowUp />}
-          percent={15}
-        />
-      </View>
-      <View style={[gs.mb_3]}>
-        <RingProgress
-          title={t("weeklyProgress")}
-          records={[
-            { color: "#FF575F", title: t("tomato"), percent: 30 },
-            { color: "#ffbc25", title: t("orange"), percent: 30 },
-            { color: "#25c685", title: t("cucumber"), percent: 30 },
-          ]}
-          image={salad}
-        />
-      </View>
-    </Container>
+    <Layout>
+      {Object.values(ROUTES).map(({ name }) => (
+        <View style={[gs.mb_1]} key={name}>
+          <TouchableOpacity onPress={() => navigation.navigate(name)}>
+            <Text>{name}</Text>
+          </TouchableOpacity>
+        </View>
+      ))}
+    </Layout>
   );
 };
 
