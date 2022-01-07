@@ -15,9 +15,10 @@ declare global {
 
 export type RootStackParamList = {
   home: undefined;
-  progress: undefined;
-  continueCard: undefined;
-  giftCard: undefined;
+  progresses: undefined;
+  continueCards: undefined;
+  giftCards: undefined;
+  wakeUpCards: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

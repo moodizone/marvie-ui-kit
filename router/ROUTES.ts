@@ -1,4 +1,4 @@
-export type RouteName = "home" | "progress" | "continueCard" | "giftCard";
+export type RouteName = "home" | "progresses" | "continueCards" | "giftCards"|'wakeUpCards';
 
 interface RouteType {
   name: RouteName;
@@ -6,7 +6,8 @@ interface RouteType {
 
 export const ROUTES: Record<RouteName, RouteType> = {
   home: { name: "home" },
-  progress: { name: "progress" },
-  continueCard: { name: "continueCard" },
-  giftCard: { name: "giftCard" },
+  progresses: { name: "progresses" },
+  continueCards: { name: "continueCards" },
+  giftCards: { name: "giftCards" },
+  wakeUpCards: { name: "wakeUpCards" },
 };

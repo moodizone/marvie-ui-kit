@@ -4,26 +4,28 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import ContinueCards from "../screens/ContinueCards";
+import GiftCards from "../screens/GiftCards";
 import Home from "../screens/Home";
 import Progress from "../screens/Progress";
-import { RouteName, ROUTES } from "./ROUTES";
 import { RootStackParamList } from "../types";
-import GiftCards from "../screens/GiftCards";
+import { RouteName, ROUTES } from "./ROUTES";
+import WakeUpCards from "../screens/WakeUpCard";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Router = () => {
   const Components: Record<RouteName, React.ComponentType<any>> = {
     home: Home,
-    progress: Progress,
-    continueCard: ContinueCards,
-    giftCard: GiftCards,
+    progresses: Progress,
+    continueCards: ContinueCards,
+    giftCards: GiftCards,
+    wakeUpCards: WakeUpCards,
   };
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.home.name}>
+        <Stack.Navigator initialRouteName={ROUTES.wakeUpCards.name}>
           {Object.values(ROUTES).map(({ name }) => (
             <Stack.Screen
               key={name}
