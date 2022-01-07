@@ -42,7 +42,7 @@ export const components = {
     }),
     copy({
       targets: [
-        { dest: "dist", src: "./lib/package.json" },
+        { dest: "dist", src: "./buildConfig/package.json" },
         { dest: "dist", src: "./README.md" },
       ],
     }),
