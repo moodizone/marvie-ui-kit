@@ -10,7 +10,7 @@ interface CardProps extends ViewProps {
 }
 
 export const Card: React.FC<CardProps> = ({
-  shadow,
+  shadow = true,
   children,
   style,
   ...otherProps
