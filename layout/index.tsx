@@ -1,14 +1,13 @@
 import * as React from "react";
-import { SafeAreaView, StatusBar } from "react-native";
+
 import Container from "../component/Layout/Container";
+import ControlButtons from "./ControlButtons";
 
 const Layout: React.FC = ({ children }) => {
   return (
     <Container>
-      <SafeAreaView>
-        <StatusBar />
-        {children}
-      </SafeAreaView>
+      <ControlButtons />
+      {children}
     </Container>
   );
 };
