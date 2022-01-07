@@ -3,7 +3,7 @@ import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
 import { ContinueCardProps } from "./type";
 import { Card, Text, useConfig } from "../../../lib";
-import { darkPalette } from "../../../style/Colors";
+import { lightPalette } from "../../../style/Colors";
 
 const dimension = 50;
 const ContinueCard: React.FC<ContinueCardProps> = ({
@@ -14,7 +14,7 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
   onClick,
 }) => {
   const { gs, colors } = useConfig();
-  const textColor: TextStyle = { color: darkPalette.secondary.i };
+  const textColor: TextStyle = { color: lightPalette.primary.iv };
   const backgroundColor: ViewStyle = { backgroundColor: colors[theme].i };
   const shade: ViewStyle = { backgroundColor: colors[theme].ii };
 

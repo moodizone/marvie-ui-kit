@@ -8,7 +8,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
   const { gs, colors } = useConfig();
   const background: ViewStyle = { backgroundColor: colors[theme].i };
   const shapeBackground: ViewStyle = { backgroundColor: colors[theme].ii };
-  const textColor: TextStyle = { color: lightPalette.primary.iii };
+  const textColor: TextStyle = { color: lightPalette.primary.iv };
 
   const topShape = (
     <Card

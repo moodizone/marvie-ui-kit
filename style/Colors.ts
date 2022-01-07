@@ -71,6 +71,6 @@ export const lightPalette: ThemePalette = {
     i: "#40DF9F",
     ii: "#FAFBFC",
     iii: "#FFFFFF",
-    iv: "#FFFFFF",
+    iv: "#FFFFFF", // use as white color
   },
 };
