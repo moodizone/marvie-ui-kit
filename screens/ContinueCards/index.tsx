@@ -3,10 +3,10 @@ import { Alert, View } from "react-native";
 
 import ContinueCard from "../../component/Card/ContinueCard";
 import Layout from "../../layout";
+import Star from "../../assets/icons/Star";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
 import { useConfig } from "../../config";
-import Star from "../../assets/icons/Star";
 
 const ContinueCards = () => {
   const { t } = useAppTranslation();
