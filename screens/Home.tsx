@@ -3,13 +3,11 @@ import { TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Layout from "../layout";
-import { useAppTranslation } from "../locales/TranslationProvider";
-import { useConfig } from "../config";
+import {  ROUTES } from "../router/ROUTES";
 import { Text } from "../lib";
-import { ROUTES } from "../router/ROUTES";
+import { useConfig } from "../config";
 
 const Home = () => {
-  const { t } = useAppTranslation();
   const { gs } = useConfig();
   const navigation = useNavigation();
   return (
