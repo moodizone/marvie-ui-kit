@@ -1,10 +1,10 @@
 import * as React from "react";
+import { View } from "react-native";
 
 import Layout from "../../layout";
-import WakeUpCard from "../../lib/Card/WakeUpCard";
+import { Card } from "../../lib";
 import { WakeUpCardProps } from "../../lib/Card/WakeUpCard/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
-import { View } from "react-native";
 import { useConfig } from "../../config";
 
 const rabbit = require("../../assets/images/rabbit.png");
@@ -41,7 +41,7 @@ const WakeUpCards = () => {
         <View style={{ width: "50%" }}>
           {items.map((item, index) => (
             <View style={[gs.mb_1]} key={index}>
-              <WakeUpCard
+              <Card.WakeUp
                 firstLine={item.firstLine}
                 image={item.image}
                 theme={item.theme}

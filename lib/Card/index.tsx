@@ -1,15 +1,25 @@
 import React from "react";
 import { StyleSheet, View, ViewProps, ViewStyle } from "react-native";
+
+import ContinueCard from "./ContinueCard";
+import GiftCard from "./GiftCard";
+import WakeUpCard from "./WakeUpCard";
 import { useConfig } from "../../config";
 
-interface CardProps extends ViewProps {
+interface Props extends ViewProps {
   /**
    * @default true
    */
   shadow?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({
+interface CardProps extends React.FC<Props> {
+  Continue: typeof ContinueCard;
+  Gift: typeof GiftCard;
+  WakeUp: typeof WakeUpCard;
+}
+
+export const Card: CardProps = ({
   shadow = true,
   children,
   style,
@@ -26,6 +36,10 @@ export const Card: React.FC<CardProps> = ({
     </View>
   );
 };
+
+Card.Continue = ContinueCard;
+Card.Gift = GiftCard;
+Card.WakeUp = WakeUpCard;
 
 const styles = StyleSheet.create({
   card: {
