@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Alert, View } from "react-native";
 
-import ArrowUp from "../../assets/icons/ArrowUp";
 import ContinueCard from "../../component/Card/ContinueCard";
 import Layout from "../../layout";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
 import { useConfig } from "../../config";
+import Star from "../../assets/icons/Star";
 
 const ContinueCards = () => {
   const { t } = useAppTranslation();
@@ -21,7 +21,7 @@ const ContinueCards = () => {
             title={t("weeklyProgress")}
             caption={t("lorem")}
             onClick={() => Alert.alert(t("clicked"))}
-            icon={<ArrowUp />}
+            icon={<Star />}
           />
         </View>
       ))}
