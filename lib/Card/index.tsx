@@ -2,7 +2,15 @@ import React from "react";
 import { StyleSheet, View, ViewProps } from "react-native";
 import { useConfig } from "../../config";
 
-export const Card: React.FC<ViewProps> = ({
+interface CardProps extends ViewProps {
+  /**
+   * @default true
+   */
+  shadow?: boolean;
+}
+
+export const Card: React.FC<CardProps> = ({
+  shadow,
   children,
   style,
   ...otherProps
@@ -10,7 +18,10 @@ export const Card: React.FC<ViewProps> = ({
   const { colors } = useConfig();
   const backgroundColor = colors.secondary.iv;
   return (
-    <View style={[styles.card, { backgroundColor }, style]} {...otherProps}>
+    <View
+      style={[shadow && styles.shadow, styles.card, { backgroundColor }, style]}
+      {...otherProps}
+    >
       {children}
     </View>
   );
@@ -20,6 +31,8 @@ const styles = StyleSheet.create({
   card: {
     padding: 24,
     borderRadius: 12,
+  },
+  shadow: {
     shadowColor: "#19282F",
     shadowOffset: {
       width: 0,
@@ -27,7 +40,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
 });
