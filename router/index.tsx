@@ -8,7 +8,7 @@ import Home from "../screens/Home";
 import Progress from "../screens/Progress";
 import { RouteName, ROUTES } from "./ROUTES";
 import { RootStackParamList } from "../types";
-import GiftCard from "../screens/GiftCard";
+import GiftCards from "../screens/GiftCards";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -17,7 +17,7 @@ const Router = () => {
     home: Home,
     progress: Progress,
     continueCard: ContinueCards,
-    giftCard: GiftCard,
+    giftCard: GiftCards,
   };
 
   return (
