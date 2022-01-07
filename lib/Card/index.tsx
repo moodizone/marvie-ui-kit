@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, ViewProps } from "react-native";
+import { StyleSheet, View, ViewProps, ViewStyle } from "react-native";
 import { useConfig } from "../../config";
 
 interface CardProps extends ViewProps {
@@ -16,10 +16,10 @@ export const Card: React.FC<CardProps> = ({
   ...otherProps
 }) => {
   const { colors } = useConfig();
-  const backgroundColor = colors.secondary.iv;
+  const backgroundColor: ViewStyle = { backgroundColor: colors.secondary.iv };
   return (
     <View
-      style={[shadow && styles.shadow, styles.card, { backgroundColor }, style]}
+      style={[shadow && styles.shadow, styles.card, backgroundColor, style]}
       {...otherProps}
     >
       {children}
