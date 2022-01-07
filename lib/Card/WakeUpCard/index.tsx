@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Card, Text, useConfig } from "../../../lib";
+import { Card, Text, useConfig } from "../../index";
 import { Image, TextStyle, View, ViewStyle } from "react-native";
 import { WakeUpCardProps } from "./type";
 import { lightPalette } from "../../../style/Colors";

@@ -25,7 +25,7 @@ const Router = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.wakeUpCards.name}>
+        <Stack.Navigator initialRouteName={ROUTES.home.name}>
           {Object.values(ROUTES).map(({ name }) => (
             <Stack.Screen
               key={name}

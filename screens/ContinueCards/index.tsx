@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Alert, View } from "react-native";
 
-import ContinueCard from "../../component/Card/ContinueCard";
+import ContinueCard from "../../lib/Card/ContinueCard";
 import Layout from "../../layout";
 import Star from "../../assets/icons/Star";
 import { Colors } from "../../style/type";

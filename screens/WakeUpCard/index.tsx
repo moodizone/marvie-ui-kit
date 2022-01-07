@@ -1,8 +1,8 @@
 import * as React from "react";
 
 import Layout from "../../layout";
-import WakeUpCard from "../../component/Card/WakeUpCard";
-import { WakeUpCardProps } from "../../component/Card/WakeUpCard/type";
+import WakeUpCard from "../../lib/Card/WakeUpCard";
+import { WakeUpCardProps } from "../../lib/Card/WakeUpCard/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
 import { View } from "react-native";
 import { useConfig } from "../../config";

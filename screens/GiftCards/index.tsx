@@ -5,7 +5,7 @@ import Layout from "../../layout";
 import { useConfig } from "../../lib";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
-import GiftCard from "../../component/Card/GiftCard";
+import GiftCard from "../../lib/Card/GiftCard";
 import Gift from "../../assets/icons/Gift";
 
 const GiftCards = () => {

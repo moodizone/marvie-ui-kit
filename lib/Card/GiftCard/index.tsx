@@ -1,7 +1,7 @@
 import * as React from "react";
 import { GiftCardProps } from "./type";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
-import { Card, Text, useConfig } from "../../../lib";
+import { Card, Text, useConfig } from "../../index";
 import { lightPalette } from "../../../style/Colors";
 
 const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {

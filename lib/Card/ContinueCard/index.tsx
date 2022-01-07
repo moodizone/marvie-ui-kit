@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
 import { ContinueCardProps } from "./type";
-import { Card, Text, useConfig } from "../../../lib";
+import { Card, Text, useConfig } from "../../index";
 import { lightPalette } from "../../../style/Colors";
 
 const dimension = 50;
