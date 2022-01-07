@@ -5,7 +5,7 @@ import { useConfig } from "../../config";
 const Container: React.FC = ({ children, ...otherProps }) => {
   const { gs } = useConfig();
   return (
-    <ScrollView style={[gs.pr_3, gs.pl_3, gs.w100, gs.h100]} {...otherProps}>
+    <ScrollView style={[gs.px_3, gs.w100, gs.h100]} {...otherProps}>
       {children}
     </ScrollView>
   );
