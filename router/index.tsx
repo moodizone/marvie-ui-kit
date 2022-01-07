@@ -6,16 +6,18 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ContinueCards from "../screens/ContinueCards";
 import Home from "../screens/Home";
 import Progress from "../screens/Progress";
-import { ROUTES } from "./ROUTES";
+import { RouteName, ROUTES } from "./ROUTES";
 import { RootStackParamList } from "../types";
+import GiftCard from "../screens/GiftCard";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Router = () => {
-  const Components = {
+  const Components: Record<RouteName, React.ComponentType<any>> = {
     home: Home,
     progress: Progress,
     continueCard: ContinueCards,
+    giftCard: GiftCard,
   };
 
   return (
