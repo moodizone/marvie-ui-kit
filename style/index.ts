@@ -276,3 +276,4 @@ export const CommonStyles: CommonStyle = {
   mb_4: { marginBottom: _4 },
   mb_5: { marginBottom: _5 },
 };
+export const ButtonDimension= 60;
