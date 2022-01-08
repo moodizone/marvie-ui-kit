@@ -7,8 +7,8 @@ import {
   ConfigContext,
   ConfigContextValues,
   ConfigState,
-  Direction,
 } from "./type";
+import { Direction } from "../style/type";
 import { darkPalette, lightPalette } from "../style/Colors";
 
 const MavieThemeContext = React.createContext<ConfigContext>(undefined);
