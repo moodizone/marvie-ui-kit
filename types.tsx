@@ -19,6 +19,7 @@ export type RootStackParamList = {
   continueCards: undefined;
   giftCards: undefined;
   wakeUpCards: undefined;
+  buttons: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
