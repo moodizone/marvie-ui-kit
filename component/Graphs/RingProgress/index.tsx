@@ -1,7 +1,13 @@
 import React from "react";
 import { Image, StyleSheet, TextStyle, View } from "react-native";
 
-import { Card, Legend, CircularProgress, Text, useConfig } from "../../../lib";
+import {
+  Card,
+  Legend,
+  CircularProgress,
+  useConfig,
+  Typography,
+} from "../../../lib";
 import { RingProgressType } from "./type";
 
 const RingProgress: React.FC<RingProgressType> = ({
@@ -30,13 +36,13 @@ const RingProgress: React.FC<RingProgressType> = ({
         <CircularProgress records={records} mode={"stick"} />
       </View>
       <View style={[gs.dynamic]}>
-        <Text
+        <Typography.Title
           ellipsizeMode={"tail"}
           numberOfLines={1}
-          style={[styles.title, textColor, gs.textAlign]}
+          style={[textColor]}
         >
           {title}
-        </Text>
+        </Typography.Title>
         {records.map(({ color, title, percent }, index) => (
           <Legend title={title} color={color} percent={percent} key={index} />
         ))}
@@ -55,9 +61,6 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     resizeMode: "contain",
-  },
-  title: {
-    fontWeight: "bold",
   },
 });
 

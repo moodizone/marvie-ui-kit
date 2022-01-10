@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, TextStyle, View } from "react-native";
 
 import { SingleProgressProps } from "./type";
-import { ProgressBar, Card, Text, useConfig } from "../../../lib";
+import { ProgressBar, Card, useConfig, Typography } from "../../../lib";
 
 const SingleProgress: React.FC<SingleProgressProps> = ({
   color,
@@ -29,23 +29,17 @@ const SingleProgress: React.FC<SingleProgressProps> = ({
         </View>
         <View style={[gs.dynamic, gs.jbetween, gs.pl_2]}>
           <View style={[gs.nowrap, gs.row]}>
-            <Text
+            <Typography.Title
               ellipsizeMode={"tail"}
               numberOfLines={1}
-              style={[
-                textColor,
-                gs.dynamic,
-                gs.pr_1,
-                gs.textAlign,
-                styles.title,
-              ]}
+              style={[textColor, gs.dynamic, gs.pr_1]}
             >
               {title}
-            </Text>
+            </Typography.Title>
             {percent && (
-              <Text
-                style={[{ color }, gs.static, styles.percent]}
-              >{`${percent}%`}</Text>
+              <Typography.Title
+                style={[{ color }, gs.static]}
+              >{`${percent}%`}</Typography.Title>
             )}
           </View>
           <ProgressBar color={color} percent={percent} />
@@ -60,12 +54,6 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 12,
-  },
-  title: {
-    fontWeight: "bold",
-  },
-  percent: {
-    fontWeight: "bold",
   },
 });
 

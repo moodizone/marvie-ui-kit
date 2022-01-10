@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Card, Text, useConfig } from "../../index";
+import { Card, Typography, useConfig } from "../../index";
 import { Image, TextStyle, View, ViewStyle } from "react-native";
 import { WakeUpCardProps } from "./type";
 import { lightPalette } from "../../../style/Colors";
@@ -18,9 +18,11 @@ const WakeUpCard: React.FC<WakeUpCardProps> = ({
   return (
     <Card style={[backgroundColor]}>
       <View style={[gs.mb_4]}>
-        <Text style={[textColor, gs.bold]}>{firstLine}</Text>
+        <Typography.Title style={[textColor]}>{firstLine}</Typography.Title>
         {secondLine && (
-          <Text style={[gs.mb_1, textColor, gs.bold]}>{secondLine}</Text>
+          <Typography.Title style={[gs.mb_1, textColor]}>
+            {secondLine}
+          </Typography.Title>
         )}
       </View>
       <View>

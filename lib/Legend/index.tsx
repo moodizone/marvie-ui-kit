@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
-import {Text} from "../Text";
 import { LegendProps } from "./type";
 import { useConfig } from "../../config";
+import {Typography} from "../Typography";
 
 export const Legend: React.FC<LegendProps> = ({ color, title }) => {
   const { colors, gs } = useConfig();
@@ -12,7 +12,7 @@ export const Legend: React.FC<LegendProps> = ({ color, title }) => {
   return (
     <View style={[gs.row, gs.abaseline]}>
       <View style={[styles.badge, backgroundColor, gs.mr_1]} />
-      <Text style={[textColor, gs.textAlign]}>{title}</Text>
+      <Typography.Text style={[textColor]}>{title}</Typography.Text>
     </View>
   );
 };

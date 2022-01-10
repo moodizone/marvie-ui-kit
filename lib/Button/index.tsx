@@ -12,8 +12,8 @@ import {
 
 import { ButtonDimension } from "../../style";
 import { ButtonProps } from "./type";
-import { Text } from "../Text";
 import { useConfig } from "../../config";
+import { Typography } from "../Typography";
 
 const Button: React.FC<ButtonProps> = ({
   disabled = false,
@@ -76,9 +76,12 @@ const Button: React.FC<ButtonProps> = ({
           <View style={[gap]}>{icon}</View>
         )}
         {title && !(loading && (square || circle)) && (
-          <Text style={[styles.title, gs.bold, textColor, titleStyles]}>
+          <Typography.Title
+
+            style={[styles.title, textColor, titleStyles]}
+          >
             {title}
-          </Text>
+          </Typography.Title>
         )}
       </View>
     </TouchableOpacity>
@@ -104,7 +107,6 @@ const styles = StyleSheet.create({
   title: {
     textAlign: "center",
     textTransform: "capitalize",
-    fontSize: 16,
   },
   disabled: {
     opacity: 0.5,

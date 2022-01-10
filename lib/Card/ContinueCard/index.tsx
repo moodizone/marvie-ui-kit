@@ -2,7 +2,7 @@ import * as React from "react";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
 import { ContinueCardProps } from "./type";
-import { Card, Text, useConfig } from "../../index";
+import { Card,  Typography, useConfig } from "../../index";
 import { lightPalette } from "../../../style/Colors";
 
 const dimension = 50;
@@ -35,20 +35,18 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
           </View>
         )}
         <View>
-          <Text
-            style={[textColor, gs.bold, gs.mb_1, gs.textAlign, styles.title]}
-          >
+          <Typography.Title style={[textColor, gs.mb_1]}>
             {title}
-          </Text>
+          </Typography.Title>
         </View>
       </View>
       <View style={[gs.row]}>
         <View style={[gs.dynamic]}>
-          <Text style={[textColor, gs.textAlign]}>{caption}</Text>
+          <Typography.Text style={[textColor]}>{caption}</Typography.Text>
         </View>
         <View style={[gs.pl_3, gs.static, gs.jcenter]}>
           {/*TODO*/}
-          <Text>Button</Text>
+          <Typography.Text>Button</Typography.Text>
         </View>
       </View>
     </Card>
@@ -56,9 +54,6 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 16,
-  },
   iconContainer: {
     width: dimension,
     height: dimension,

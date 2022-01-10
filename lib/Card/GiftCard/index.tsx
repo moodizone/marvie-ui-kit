@@ -1,7 +1,8 @@
 import * as React from "react";
-import { GiftCardProps } from "./type";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
-import { Card, Text, useConfig } from "../../index";
+
+import { Card, Typography, useConfig } from "../../index";
+import { GiftCardProps } from "./type";
 import { lightPalette } from "../../../style/Colors";
 
 const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
@@ -34,12 +35,14 @@ const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
       <View>
         {icon && <View style={[gs.mb_1, gs.acenter, gs.jcenter]}>{icon}</View>}
         <View style={[gs.mb_1]}>
-          <Text style={[gs.bold, styles.title, textColor, gs.textCenter]}>
+          <Typography.Title style={[textColor, gs.textCenter]}>
             {title}
-          </Text>
+          </Typography.Title>
         </View>
         <View style={[gs.mb_1]}>
-          <Text style={[textColor, gs.textCenter]}>{caption}</Text>
+          <Typography.Text style={[textColor, gs.textCenter]}>
+            {caption}
+          </Typography.Text>
         </View>
       </View>
       {topShape}
@@ -50,9 +53,6 @@ const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 16,
-  },
   shape: {
     position: "absolute",
     zIndex: -1,
