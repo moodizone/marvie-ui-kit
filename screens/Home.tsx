@@ -3,8 +3,8 @@ import { TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import Layout from "../layout";
-import {  ROUTES } from "../router/ROUTES";
-import { Text } from "../lib";
+import { ROUTES } from "../router/ROUTES";
+import { Typography } from "../lib";
 import { useConfig } from "../config";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       {Object.values(ROUTES).map(({ name }) => (
         <View style={[gs.mb_1]} key={name}>
           <TouchableOpacity onPress={() => navigation.navigate(name)}>
-            <Text>{name}</Text>
+            <Typography.Title>{name}</Typography.Title>
           </TouchableOpacity>
         </View>
       ))}
