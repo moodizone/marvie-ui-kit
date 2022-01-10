@@ -3,26 +3,24 @@ import {
   ActivityIndicator,
   Alert,
   StyleProp,
-  StyleSheet,
   TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
 } from "react-native";
 
-import { ButtonDimension } from "../../style";
-import { ButtonProps } from "./type";
-import { useConfig } from "../../config";
+import { BaseButtonProps, ButtonProps, CircleButtonProps } from "./type";
 import { Typography } from "../Typography";
+import { styles } from "./styles";
+import { useConfig } from "../../config";
 
-const Button: React.FC<ButtonProps> = ({
+const BaseButton: React.FC<BaseButtonProps> = ({
   disabled = false,
   color = "primary",
   type = "solid",
   loading = false,
   square = false,
   circle = false,
-  children,
   style,
   title,
   titleStyles,
@@ -33,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
   const calculatedStyles: StyleProp<ViewStyle>[] = [];
   const paletteColor = colors[color].i;
   let textColor: TextStyle = { color: "#fff" };
-  const gap: ViewStyle = !circle && !square ? gs.mr_1 : {};
+  const gap: ViewStyle = !(circle || square) ? gs.mr_1 : {};
 
   if (type === "solid") {
     calculatedStyles.push(styles.solid);
@@ -50,12 +48,6 @@ const Button: React.FC<ButtonProps> = ({
 
   if (disabled || loading) {
     calculatedStyles.push(styles.disabled);
-  }
-
-  if (square) {
-    calculatedStyles.push(styles.square);
-  } else if (circle) {
-    calculatedStyles.push(styles.circle);
   }
 
   return (
@@ -76,10 +68,7 @@ const Button: React.FC<ButtonProps> = ({
           <View style={[gap]}>{icon}</View>
         )}
         {title && !(loading && (square || circle)) && (
-          <Typography.Title
-
-            style={[styles.title, textColor, titleStyles]}
-          >
+          <Typography.Title style={[styles.title, textColor, titleStyles]}>
             {title}
           </Typography.Title>
         )}
@@ -88,39 +77,47 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-const styles = StyleSheet.create({
-  btn: {
-    height: ButtonDimension,
-    borderRadius: 12,
-    padding: 16,
-    borderWidth: 2,
-    opacity: 1,
-  },
-  square: {
-    width: ButtonDimension,
-    overflow: "hidden",
-  },
-  circle: {
-    width: ButtonDimension,
-    borderRadius: ButtonDimension / 2,
-  },
-  title: {
-    textAlign: "center",
-    textTransform: "capitalize",
-  },
-  disabled: {
-    opacity: 0.5,
-  },
-  outlined: {
-    backgroundColor: "transparent",
-  },
-  solid: {
-    borderColor: "transparent",
-  },
-  ghost: {
-    backgroundColor: "transparent",
-    borderColor: "transparent",
-  },
-});
+export const Button: ButtonProps = (props) => {
+  return <BaseButton {...props} />;
+};
+export const Circle: React.FC<CircleButtonProps> = ({
+  square,
+  circle,
+  style,
+  title,
+  icon,
+  ...otherProps
+}) => {
+  return (
+    <BaseButton
+      square={false}
+      circle
+      title={!icon ? title : undefined}
+      icon={icon}
+      style={[styles.circle, style]}
+      {...otherProps}
+    />
+  );
+};
+export const Square: React.FC<CircleButtonProps> = ({
+  square,
+  circle,
+  style,
+  title,
+  icon,
+  ...otherProps
+}) => {
+  return (
+    <BaseButton
+      square
+      circle={false}
+      title={!icon ? title : undefined}
+      icon={icon}
+      style={[styles.square, style]}
+      {...otherProps}
+    />
+  );
+};
 
-export default Button;
+Button.Square = Square;
+Button.Circle = Circle;

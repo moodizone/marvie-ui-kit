@@ -1,8 +1,9 @@
 import React from "react";
 import { TextProps } from "react-native";
+
 import { Paragraph, Title, Text } from "./index";
 
-export interface TypographyType extends TextProps {
+export interface BaseTypographyProps extends TextProps {
   /**
    * @default `false`
    */
@@ -45,16 +46,15 @@ export interface TypographyType extends TextProps {
    */
   deleted?: boolean;
 }
-
-export interface TitleType extends TypographyType {
+export interface TypographyProps extends React.FC<BaseTypographyProps> {
+  Paragraph: typeof Paragraph;
+  Text: typeof Text;
+  Title: typeof Title;
+}
+export interface TitleType extends BaseTypographyProps {
   /**
    * @default `5`
    */
   level?: 1 | 2 | 3 | 4 | 5;
 }
 
-export interface TypographyProps extends React.FC<TypographyType> {
-  Paragraph: typeof Paragraph;
-  Text: typeof Text;
-  Title: typeof Title;
-}

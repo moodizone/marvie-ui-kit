@@ -2,7 +2,7 @@ import * as React from "react";
 import { View } from "react-native";
 
 import Layout from "../../layout";
-import Button from "../../lib/Button";
+import { Button } from "../../lib/Button";
 import { useConfig } from "../../config";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
@@ -24,7 +24,8 @@ const Buttons = () => {
             color={c as Colors}
             style={[gs.mb_1]}
           />
-          <Button
+          <Button.Square
+            loading
             icon={<Gift color={colors[c as Colors].i as string} />}
             title={t("weeklyProgress")}
             type={"outlined"}

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Text as RNText, TextStyle } from "react-native";
 
-import { TitleType, TypographyProps, TypographyType } from "./type";
+import { TitleType, TypographyProps, BaseTypographyProps } from "./type";
 import { styles } from "./styles";
 import { useConfig } from "../../config";
 
-const BaseTypography: React.FC<TypographyType> = ({
+const BaseTypography: React.FC<BaseTypographyProps> = ({
   children,
   style,
   bold,
@@ -68,14 +68,14 @@ export const Typography: TypographyProps = ({
   );
 };
 
-export const Paragraph: React.FC<TypographyType> = ({
+export const Paragraph: React.FC<BaseTypographyProps> = ({
   children,
   ...otherProps
 }) => {
   return <BaseTypography {...otherProps}>{children}</BaseTypography>;
 };
 
-export const Text: React.FC<TypographyType> = ({ children, ...otherProps }) => {
+export const Text: React.FC<BaseTypographyProps> = ({ children, ...otherProps }) => {
   return <BaseTypography {...otherProps}>{children}</BaseTypography>;
 };
 
