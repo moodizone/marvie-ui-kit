@@ -11,6 +11,7 @@ import { RootStackParamList } from "../types";
 import { RouteName, ROUTES } from "./ROUTES";
 import WakeUpCards from "../screens/WakeUpCard";
 import Buttons from "../screens/Buttons";
+import Typographies from "../screens/Typographies/typographies";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -22,12 +23,13 @@ const Router = () => {
     giftCards: GiftCards,
     wakeUpCards: WakeUpCards,
     buttons: Buttons,
+    typographies: Typographies,
   };
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.buttons.name}>
+        <Stack.Navigator initialRouteName={ROUTES.home.name}>
           {Object.values(ROUTES).map(({ name }) => (
             <Stack.Screen
               key={name}
