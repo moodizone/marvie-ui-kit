@@ -5,6 +5,7 @@ export type RouteName =
   | "giftCards"
   | "wakeUpCards"
   | "buttons"
+  | "bookedCards"
   | "typographies";
 
 interface RouteType {
@@ -19,4 +20,5 @@ export const ROUTES: Record<RouteName, RouteType> = {
   wakeUpCards: { name: "wakeUpCards" },
   buttons: { name: "buttons" },
   typographies: { name: "typographies" },
+  bookedCards: { name: "bookedCards" },
 };
