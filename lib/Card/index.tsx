@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, ViewProps, ViewStyle } from "react-native";
 
+import BookedCard from "./BookedCard";
 import ContinueCard from "./ContinueCard";
 import GiftCard from "./GiftCard";
 import WakeUpCard from "./WakeUpCard";
@@ -17,6 +18,7 @@ interface CardProps extends React.FC<Props> {
   Continue: typeof ContinueCard;
   Gift: typeof GiftCard;
   WakeUp: typeof WakeUpCard;
+  Booked: typeof BookedCard;
 }
 
 export const Card: CardProps = ({
@@ -40,6 +42,7 @@ export const Card: CardProps = ({
 Card.Continue = ContinueCard;
 Card.Gift = GiftCard;
 Card.WakeUp = WakeUpCard;
+Card.Booked = BookedCard;
 
 const styles = StyleSheet.create({
   card: {
