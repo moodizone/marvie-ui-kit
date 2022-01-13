@@ -32,11 +32,10 @@ const BookedCard: React.FC<BookedCards> = ({ icon, title, caption, theme }) => {
     </Card>
   );
 };
+export default BookedCard;
 
 const styles = StyleSheet.create({
   opacity: {
     opacity: 0.5,
   },
 });
-
-export default BookedCard;

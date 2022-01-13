@@ -1,27 +1,16 @@
 import React from "react";
-import { StyleSheet, View, ViewProps, ViewStyle } from "react-native";
+import { StyleSheet, View, ViewStyle } from "react-native";
 
 import BookedCard from "./BookedCard";
 import ContinueCard from "./ContinueCard";
 import GiftCard from "./GiftCard";
 import WakeUpCard from "./WakeUpCard";
 import { useConfig } from "../../config";
+import {BaseCardProps, CardProps} from "./type";
 
-interface Props extends ViewProps {
-  /**
-   * @default true
-   */
-  shadow?: boolean;
-}
 
-interface CardProps extends React.FC<Props> {
-  Continue: typeof ContinueCard;
-  Gift: typeof GiftCard;
-  WakeUp: typeof WakeUpCard;
-  Booked: typeof BookedCard;
-}
 
-export const Card: CardProps = ({
+const BaseCard: React.FC<BaseCardProps> = ({
   shadow = true,
   children,
   style,
@@ -39,10 +28,9 @@ export const Card: CardProps = ({
   );
 };
 
-Card.Continue = ContinueCard;
-Card.Gift = GiftCard;
-Card.WakeUp = WakeUpCard;
-Card.Booked = BookedCard;
+export const Card: CardProps = (props) => {
+  return <BaseCard {...props} />;
+};
 
 const styles = StyleSheet.create({
   card: {
@@ -60,3 +48,8 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
+
+Card.Continue = ContinueCard;
+Card.Gift = GiftCard;
+Card.WakeUp = WakeUpCard;
+Card.Booked = BookedCard;

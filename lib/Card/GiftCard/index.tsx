@@ -51,6 +51,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
     </Card>
   );
 };
+export default GiftCard;
 
 const styles = StyleSheet.create({
   shape: {
@@ -77,5 +78,3 @@ const styles = StyleSheet.create({
     right: 24,
   },
 });
-
-export default GiftCard;

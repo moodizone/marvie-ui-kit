@@ -1,8 +1,9 @@
 import * as React from "react";
+import { AntDesign } from "@expo/vector-icons";
 import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
 
+import { Button, Card, Typography, useConfig } from "../../index";
 import { ContinueCardProps } from "./type";
-import { Card,  Typography, useConfig } from "../../index";
 import { lightPalette } from "../../../style/Colors";
 
 const dimension = 50;
@@ -11,7 +12,7 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
   icon,
   title,
   caption,
-  onClick,
+  onPress,
 }) => {
   const { gs, colors } = useConfig();
   const textColor: TextStyle = { color: lightPalette.primary.iv };
@@ -45,13 +46,17 @@ const ContinueCard: React.FC<ContinueCardProps> = ({
           <Typography.Text style={[textColor]}>{caption}</Typography.Text>
         </View>
         <View style={[gs.pl_3, gs.static, gs.jcenter]}>
-          {/*TODO*/}
-          <Typography.Text>Button</Typography.Text>
+          <Button.Circle
+            onPress={onPress}
+            icon={<AntDesign name="gift" size={20} color={"#fff"} />}
+            color={theme}
+          />
         </View>
       </View>
     </Card>
   );
 };
+export default ContinueCard;
 
 const styles = StyleSheet.create({
   iconContainer: {
@@ -60,5 +65,3 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
 });
-
-export default ContinueCard;
