@@ -44,6 +44,7 @@ export const components = {
       targets: [
         { dest: "dist", src: "./buildConfig/package.json" },
         { dest: "dist", src: "./README.md" },
+        { dest: "dist", src: "./CHANGELOG.md" },
       ],
     }),
   ],
