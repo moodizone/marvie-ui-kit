@@ -1,8 +1,16 @@
 import React from "react";
-import { Colors } from "../../../style/type";
+import { ColorValue } from "react-native";
 
 export interface ContinueCardProps {
-  theme: Colors;
+  /**
+   * whole card backgroundColor
+   */
+  color: ColorValue;
+
+  /**
+   * shape backgroundColor
+   */
+  shapeColor?: ColorValue;
   icon?: React.ReactNode;
   title: string;
   caption: string;

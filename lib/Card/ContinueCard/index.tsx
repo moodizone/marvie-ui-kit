@@ -1,67 +1,49 @@
 import * as React from "react";
 import { AntDesign } from "@expo/vector-icons";
-import { StyleSheet, TextStyle, View, ViewStyle } from "react-native";
+import { TextStyle, View, ViewStyle } from "react-native";
 
-import { Button, Card, Typography, useConfig } from "../../index";
+import { Button, Card, Shape, Typography, useConfig } from "../../index";
 import { ContinueCardProps } from "./type";
 import { lightPalette } from "../../../style/Colors";
 
-const dimension = 50;
 const ContinueCard: React.FC<ContinueCardProps> = ({
-  theme,
+  color,
   icon,
   title,
   caption,
+  shapeColor,
   onPress,
 }) => {
-  const { gs, colors } = useConfig();
+  const { gs } = useConfig();
   const textColor: TextStyle = { color: lightPalette.primary.iv };
-  const backgroundColor: ViewStyle = { backgroundColor: colors[theme].i };
-  const shade: ViewStyle = { backgroundColor: colors[theme].ii };
+  const backgroundColor: ViewStyle = { backgroundColor: color };
+  const shapeBackgroundColor: ViewStyle = {
+    backgroundColor: shapeColor ?? color,
+  };
 
   return (
     <Card style={[backgroundColor]}>
-      <View style={[gs.row, gs.acenter, gs.mb_2]}>
+      <View style={[gs.row, gs.acenter, gs.mb_2, gs.acenter]}>
         {icon && (
-          <View
-            style={[
-              gs.mr_2,
-              gs.acenter,
-              gs.jcenter,
-              styles.iconContainer,
-              shade,
-            ]}
-          >
+          <Shape.Square style={[shapeBackgroundColor, gs.mr_1]}>
             {icon}
-          </View>
+          </Shape.Square>
         )}
-        <View>
-          <Typography.Title style={[textColor, gs.mb_1]}>
-            {title}
-          </Typography.Title>
-        </View>
+        <Typography.Title style={[textColor, gs.mb_1]}>
+          {title}
+        </Typography.Title>
       </View>
       <View style={[gs.row]}>
         <View style={[gs.dynamic]}>
           <Typography.Text style={[textColor]}>{caption}</Typography.Text>
         </View>
         <View style={[gs.pl_3, gs.static, gs.jcenter]}>
-          <Button.Circle
-            onPress={onPress}
-            icon={<AntDesign name="gift" size={20} color={"#fff"} />}
-            color={theme}
-          />
+          <Button.Circle onPress={onPress} color={shapeColor ?? color}>
+            <AntDesign name="gift" size={20} color={"#fff"} />
+          </Button.Circle>
         </View>
       </View>
     </Card>
   );
 };
 export default ContinueCard;
-
-const styles = StyleSheet.create({
-  iconContainer: {
-    width: dimension,
-    height: dimension,
-    borderRadius: 12,
-  },
-});

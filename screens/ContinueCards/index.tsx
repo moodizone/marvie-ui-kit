@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Alert, View } from "react-native";
+import { Alert, ColorValue, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 import Layout from "../../layout";
@@ -10,17 +10,18 @@ import { Card } from "../../lib";
 
 const ContinueCards = () => {
   const { t } = useAppTranslation();
-  const { gs } = useConfig();
+  const { gs, colors } = useConfig();
 
   return (
     <Layout>
       {["red", "orange", "yellow", "green", "blue", "purple"].map((c) => (
         <View style={[gs.mb_3]} key={c}>
           <Card.Continue
-            theme={c as Colors}
+            color={colors[c as Colors].i as ColorValue}
+            shapeColor={colors[c as Colors].ii as ColorValue}
             title={t("weeklyProgress")}
             caption={t("lorem")}
-            onClick={() => Alert.alert(t("clicked"))}
+            onPress={() => Alert.alert(t("clicked"))}
             icon={<AntDesign name="star" size={24} color="#fff" />}
           />
         </View>

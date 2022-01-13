@@ -1,10 +1,24 @@
-## 0.2.0 (Jan 11, 2022)
+# 0.3.0 (Jan 11, 2022)
+
+### ✨ New Features
+
+Following components added:
+- `Shape`
+- `Card.Booked`
+- `Card.Introduced`
+
+### ⚡️ Improvements
+- replace `svg` with `vector-icons`
+
+
+
+# 0.2.0 (Jan 11, 2022)
 
 ### ✨ New Features
 
 - `Typography` with corresponding meta added (including `Text`, `Paragraph` and `Title`).
 
-## 0.1.0 (Jan 09, 2022)
+# 0.1.0 (Jan 09, 2022)
 
 ### ✨ New Features
 
