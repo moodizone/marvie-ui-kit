@@ -1,7 +1,9 @@
 import * as React from "react";
 import { StyleSheet, View, ViewStyle } from "react-native";
 
-import { CircleProps, ShapeProps, SquareProps } from "./type";
+import Circle from "./Circle";
+import Square from "./Square";
+import { ShapeProps } from "./type";
 import { useConfig } from "../../config";
 
 export const Shape: ShapeProps = ({
@@ -19,50 +21,6 @@ export const Shape: ShapeProps = ({
     >
       {children}
     </View>
-  );
-};
-
-export const Square: React.FC<SquareProps> = ({
-  children,
-  style,
-  backgroundColor,
-  dimension,
-  ...otherProps
-}) => {
-  const dimensionStyles: ViewStyle = { width: dimension, height: dimension };
-  const { gs } = useConfig();
-  return (
-    <Shape
-      backgroundColor={backgroundColor}
-      style={[gs.ofh, style, dimensionStyles]}
-      {...otherProps}
-    >
-      {children}
-    </Shape>
-  );
-};
-
-export const Circle: React.FC<CircleProps> = ({
-  children,
-  style,
-  backgroundColor,
-  dimension,
-  ...otherProps
-}) => {
-  const { gs } = useConfig();
-  const dimensionStyles: ViewStyle = {
-    width: dimension,
-    height: dimension,
-    borderRadius: dimension,
-  };
-  return (
-    <Shape
-      backgroundColor={backgroundColor}
-      style={[gs.ofh, style, dimensionStyles]}
-      {...otherProps}
-    >
-      {children}
-    </Shape>
   );
 };
 

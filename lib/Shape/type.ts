@@ -1,16 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { ColorValue, ViewProps } from "react-native";
 
-import { Circle, Square } from "./index";
+import Circle from "./Circle";
+import Square from "./Square";
 
 export interface BaseShapeProps extends ViewProps {
   backgroundColor?: ColorValue;
-}
-export interface SquareProps extends BaseShapeProps {
-  dimension: number;
-}
-export interface CircleProps extends BaseShapeProps {
-  dimension: number;
 }
 
 export interface ShapeProps extends React.FC<BaseShapeProps> {
