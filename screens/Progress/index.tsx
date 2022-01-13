@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
-import ArrowUp from "../../assets/icons/ArrowUp";
 import RingProgress from "../../component/Graphs/RingProgress";
 import SingleProgress from "../../component/Graphs/SingleProgress/SingleProgress";
 import { useAppTranslation } from "../../locales/TranslationProvider";
@@ -20,7 +20,7 @@ const Progress = () => {
         <SingleProgress
           color={"#FF575F"}
           title={t("weeklyProgress")}
-          icon={<ArrowUp />}
+          icon={<AntDesign name="arrowup" size={24} color="#fff" />}
           percent={15}
         />
       </View>

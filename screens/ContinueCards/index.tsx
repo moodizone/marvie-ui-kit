@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Alert, View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 import Layout from "../../layout";
-import Star from "../../assets/icons/Star";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
 import { useConfig } from "../../config";
-import {Card} from "../../lib";
+import { Card } from "../../lib";
 
 const ContinueCards = () => {
   const { t } = useAppTranslation();
@@ -21,7 +21,7 @@ const ContinueCards = () => {
             title={t("weeklyProgress")}
             caption={t("lorem")}
             onClick={() => Alert.alert(t("clicked"))}
-            icon={<Star />}
+            icon={<AntDesign name="star" size={24} color="#fff" />}
           />
         </View>
       ))}

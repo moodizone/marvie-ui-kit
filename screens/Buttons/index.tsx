@@ -1,15 +1,15 @@
 import * as React from "react";
 import { View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 import Layout from "../../layout";
 import { Button } from "../../lib/Button";
 import { useConfig } from "../../config";
 import { Colors } from "../../style/type";
 import { useAppTranslation } from "../../locales/TranslationProvider";
-import Gift from "../../assets/icons/Gift";
 
 const Buttons = () => {
-  const { gs, colors } = useConfig();
+  const { gs } = useConfig();
   const { t } = useAppTranslation();
 
   return (
@@ -17,7 +17,7 @@ const Buttons = () => {
       {["red", "orange", "yellow", "green", "blue", "purple"].map((c) => (
         <View style={[gs.mb_3]} key={c}>
           <Button
-            icon={<Gift color={"#fff"} />}
+            icon={<AntDesign name="gift" size={24} color="#fff" />}
             title={t("weeklyProgress")}
             titleStyles={{ textTransform: "uppercase" }}
             type={"solid"}
@@ -26,14 +26,14 @@ const Buttons = () => {
           />
           <Button.Square
             loading
-            icon={<Gift color={colors[c as Colors].i as string} />}
+            icon={<AntDesign name="gift" size={24} color="#fff" />}
             title={t("weeklyProgress")}
             type={"outlined"}
             color={c as Colors}
             style={[gs.mb_1]}
           />
           <Button
-            icon={<Gift color={colors[c as Colors].i as string} />}
+            icon={<AntDesign name="gift" size={24} color="#fff" />}
             title={t("weeklyProgress")}
             type={"ghost"}
             color={c as Colors}
