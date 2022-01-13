@@ -25,7 +25,8 @@ const BaseTypography: React.FC<BaseTypographyProps> = ({
   disabled,
   ...otherProps
 }) => {
-  const { gs } = useConfig();
+  const { gs, colors } = useConfig();
+  const textColor: TextStyle = { color: colors.secondary.i };
   let calculatedStyles: TextStyle[] = [];
   if (bold) {
     calculatedStyles.push(styles.bold);
@@ -51,7 +52,7 @@ const BaseTypography: React.FC<BaseTypographyProps> = ({
 
   return (
     <RNText
-      style={[styles.text, gs.textAlign, calculatedStyles, style]}
+      style={[textColor, styles.text, gs.textAlign, calculatedStyles, style]}
       {...otherProps}
     >
       {children}
