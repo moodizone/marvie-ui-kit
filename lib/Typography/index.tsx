@@ -1,7 +1,12 @@
 import * as React from "react";
-import { Text as RNText, TextStyle } from "react-native";
+import { Text as RNText, TextStyle, TouchableOpacity } from "react-native";
 
-import { TitleType, TypographyProps, BaseTypographyProps } from "./type";
+import {
+  TitleProps,
+  TypographyProps,
+  BaseTypographyProps,
+  LinkProps,
+} from "./type";
 import { styles } from "./styles";
 import { useConfig } from "../../config";
 
@@ -75,11 +80,21 @@ export const Paragraph: React.FC<BaseTypographyProps> = ({
   return <BaseTypography {...otherProps}>{children}</BaseTypography>;
 };
 
-export const Text: React.FC<BaseTypographyProps> = ({ children, ...otherProps }) => {
-  return <BaseTypography {...otherProps}>{children}</BaseTypography>;
+export const Link: React.FC<LinkProps> = ({
+  children,
+  onPress,
+  ...otherProps
+}) => {
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <BaseTypography link {...otherProps}>
+        {children}
+      </BaseTypography>
+    </TouchableOpacity>
+  );
 };
 
-export const Title: React.FC<TitleType> = ({
+export const Title: React.FC<TitleProps> = ({
   children,
   style,
   level = 5,
@@ -117,6 +132,14 @@ export const Title: React.FC<TitleType> = ({
   );
 };
 
+export const Text: React.FC<BaseTypographyProps> = ({
+  children,
+  ...otherProps
+}) => {
+  return <BaseTypography {...otherProps}>{children}</BaseTypography>;
+};
+
 Typography.Paragraph = Paragraph;
 Typography.Text = Text;
 Typography.Title = Title;
+Typography.Link = Link;
