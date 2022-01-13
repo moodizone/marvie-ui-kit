@@ -107,13 +107,14 @@ export const Square: React.FC<CircleButtonProps> = ({
   icon,
   ...otherProps
 }) => {
+  const { gs } = useConfig();
   return (
     <BaseButton
       square
       circle={false}
       title={!icon ? title : undefined}
       icon={icon}
-      style={[styles.square, style]}
+      style={[gs.ofh, style]}
       {...otherProps}
     />
   );

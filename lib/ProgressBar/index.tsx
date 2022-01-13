@@ -34,6 +34,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
               outputRange: ["0%", "100%"],
             }),
           },
+          gs.ofh,
           gs.h100,
         ]}
       />
@@ -45,6 +46,5 @@ const styles = StyleSheet.create({
   container: {
     height: 10,
     borderRadius: 6,
-    overflow: "hidden",
   },
 });

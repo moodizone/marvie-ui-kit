@@ -30,10 +30,11 @@ export const Square: React.FC<SquareProps> = ({
   ...otherProps
 }) => {
   const dimensionStyles: ViewStyle = { width: dimension, height: dimension };
+  const { gs } = useConfig();
   return (
     <Shape
       backgroundColor={backgroundColor}
-      style={[styles.overflowHidden, style, dimensionStyles]}
+      style={[gs.ofh, style, dimensionStyles]}
       {...otherProps}
     >
       {children}
@@ -48,6 +49,7 @@ export const Circle: React.FC<CircleProps> = ({
   dimension,
   ...otherProps
 }) => {
+  const { gs } = useConfig();
   const dimensionStyles: ViewStyle = {
     width: dimension,
     height: dimension,
@@ -56,7 +58,7 @@ export const Circle: React.FC<CircleProps> = ({
   return (
     <Shape
       backgroundColor={backgroundColor}
-      style={[styles.overflowHidden, style, dimensionStyles]}
+      style={[gs.ofh, style, dimensionStyles]}
       {...otherProps}
     >
       {children}
@@ -70,8 +72,5 @@ Shape.Circle = Circle;
 const styles = StyleSheet.create({
   container: {
     borderRadius: 12,
-  },
-  overflowHidden: {
-    overflow: "hidden",
   },
 });

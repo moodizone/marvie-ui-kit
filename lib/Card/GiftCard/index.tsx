@@ -31,7 +31,7 @@ const GiftCard: React.FC<GiftCardProps> = ({ caption, title, theme, icon }) => {
   );
 
   return (
-    <Card style={[background, { overflow: "hidden" }]}>
+    <Card style={[background, gs.ofh]}>
       <View>
         {icon && <View style={[gs.mb_1, gs.acenter, gs.jcenter]}>{icon}</View>}
         <View style={[gs.mb_1]}>

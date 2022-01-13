@@ -30,6 +30,7 @@ export type GeneralStyleKey =
   | "mr_5";
 
 export type CommonStyleKey =
+  | "ofh"
   | "textCenter"
   | "thin"
   | "normal"
@@ -191,6 +192,7 @@ export const RTLStyles: GeneralStyle = {
   mr_5: { marginLeft: _5 },
 };
 export const CommonStyles: CommonStyle = {
+  ofh: { overflow: "hidden" },
   textCenter: { textAlign: "center" },
   thin: { fontWeight: "200" },
   normal: { fontWeight: "normal" },
