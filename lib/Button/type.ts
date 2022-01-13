@@ -1,7 +1,6 @@
 import React from "react";
-import { TextStyle, TouchableOpacityProps } from "react-native";
+import { ColorValue, TouchableOpacityProps } from "react-native";
 
-import { Colors } from "../../style/type";
 import Square from "./Square";
 import Circle from "./Circle";
 
@@ -21,9 +20,9 @@ export interface BaseButtonProps extends TouchableOpacityProps {
    *
    * | name       | textColor | backgroundColor | borderColor  |
    * | :--------- | :-------- | :-------------- | :----------- |
-   * | `solid`    | white     | C               | C            |
-   * | `outlined` | C         | transparent     | C            |
-   * | `ghost`    | C         | transparent     | transparent  |
+   * | `solid`    | white     | `color`         | `color`      |
+   * | `outlined` | `color`   | transparent     | `color`      |
+   * | `ghost`    | `color`   | transparent     | transparent  |
    *
    * C represent color value (next property)
    * @default `solid`
@@ -32,23 +31,9 @@ export interface BaseButtonProps extends TouchableOpacityProps {
 
   /**
    * Choose text, background and border's color based on `type`
-   * @default `primary`
+   * @default `primary.i`
    */
-  color?: Colors;
-
-  /**
-   * indicate shape of button.
-   * If it pass `true`, one of `icon` or `title` should be provided for better appearance.
-   * Loading indicator will replace `icon` or `title` during spinning.
-   *
-   * @default false,
-   */
-  circle?: boolean;
-  square?: boolean;
-
-  title?: string;
-  icon?: React.ReactNode;
-  titleStyles?: TextStyle;
+  color?: ColorValue;
 }
 export interface ButtonProps extends React.FC<BaseButtonProps> {
   Circle: typeof Circle;

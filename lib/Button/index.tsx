@@ -1,9 +1,7 @@
 import * as React from "react";
 import {
-  ActivityIndicator,
   Alert,
   StyleProp,
-  TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -11,44 +9,33 @@ import {
 
 import Circle from "./Circle";
 import Square from "./Square";
-import {BaseButtonProps, ButtonProps} from "./type";
-import { Typography } from "../Typography";
+import { BaseButtonProps, ButtonProps } from "./type";
 import { styles } from "./styles";
 import { useConfig } from "../../config";
+import Indicator from "./Indicator";
 
-const BaseButton: React.FC<BaseButtonProps> = ({
+export const BaseButton: React.FC<BaseButtonProps> = ({
   disabled = false,
-  color = "primary",
+  color,
   type = "solid",
   loading = false,
-  square = false,
-  circle = false,
   style,
-  title,
-  titleStyles,
-  icon,
+  children,
   ...otherProps
 }) => {
-  const { colors, gs } = useConfig();
+  const { gs, colors } = useConfig();
+  const sanitizedColor = color ?? colors.primary.i;
   const calculatedStyles: StyleProp<ViewStyle>[] = [];
-  const paletteColor = colors[color].i;
-  let textColor: TextStyle = { color: "#fff" };
-
-  // gap between `indicator` and buttonText or icon
-  // `circle` or `square`
-  const gap: ViewStyle = !(circle || square) ? gs.mr_1 : {};
 
   if (type === "solid") {
+    calculatedStyles.push({ backgroundColor: sanitizedColor });
+    calculatedStyles.push({ borderColor: sanitizedColor });
     calculatedStyles.push(styles.solid);
-    calculatedStyles.push({ backgroundColor: paletteColor });
-    calculatedStyles.push({ borderColor: paletteColor });
   } else if (type === "outlined") {
+    calculatedStyles.push({ borderColor: sanitizedColor });
     calculatedStyles.push(styles.outlined);
-    calculatedStyles.push({ borderColor: paletteColor });
-    textColor = { color: paletteColor };
   } else if (type === "ghost") {
     calculatedStyles.push(styles.ghost);
-    textColor = { color: paletteColor };
   }
 
   if (disabled || loading) {
@@ -57,33 +44,29 @@ const BaseButton: React.FC<BaseButtonProps> = ({
 
   return (
     <TouchableOpacity
-      disabled={disabled}
+      disabled={disabled || loading}
       style={[styles.btn, calculatedStyles, style]}
       onPress={() => Alert.alert("clicked")}
       {...otherProps}
     >
-      <View style={[gs.row, gs.jcenter, gs.acenter]}>
-        {loading && (
-          <ActivityIndicator
-            style={gap}
-            color={type === "solid" ? "#fff" : paletteColor}
-          />
-        )}
-        {icon && !(loading && (square || circle)) && (
-          <View style={[gap]}>{icon}</View>
-        )}
-        {title && !(loading && (square || circle)) && (
-          <Typography.Title style={[styles.title, textColor, titleStyles]}>
-            {title}
-          </Typography.Title>
-        )}
-      </View>
+      <View style={[gs.row, gs.jcenter, gs.acenter]}>{children}</View>
     </TouchableOpacity>
   );
 };
 
-export const Button: ButtonProps = (props) => {
-  return <BaseButton {...props} />;
+export const Button: ButtonProps = ({
+  loading,
+  color,
+  type,
+  children,
+  ...otherProps
+}) => {
+  return (
+    <BaseButton loading={loading} color={color} type={type} {...otherProps}>
+      {loading && <Indicator type={type} color={color} />}
+      {children}
+    </BaseButton>
+  );
 };
 
 Button.Square = Square;

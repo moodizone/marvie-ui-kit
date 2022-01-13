@@ -1,18 +1,19 @@
 import * as React from "react";
 import { ViewStyle } from "react-native";
 
-import { Button } from "../index";
+import Indicator from "../Indicator";
+import { BaseButton } from "../index";
 import { ButtonDimension } from "../../../style";
 import { SquareButtonType } from "./type";
 import { useConfig } from "../../../config";
 
 const Square: React.FC<SquareButtonType> = ({
-  square,
-  circle,
   style,
-  title,
   dimension = ButtonDimension,
-  icon,
+  children,
+  loading,
+  type,
+  color,
   ...otherProps
 }) => {
   const calculatedStyles: ViewStyle = {
@@ -22,14 +23,15 @@ const Square: React.FC<SquareButtonType> = ({
   };
   const { gs } = useConfig();
   return (
-    <Button
-      square
-      circle={false}
-      title={!icon ? title : undefined}
-      icon={icon}
+    <BaseButton
+      loading={loading}
+      type={type}
+      color={color}
       style={[gs.ofh, calculatedStyles, style]}
       {...otherProps}
-    />
+    >
+      {loading ? <Indicator type={type} color={color} /> : children}
+    </BaseButton>
   );
 };
 

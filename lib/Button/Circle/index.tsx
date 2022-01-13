@@ -1,18 +1,19 @@
 import * as React from "react";
 import { ViewStyle } from "react-native";
 
+import Indicator from "../Indicator";
+import { BaseButton } from "../index";
 import { ButtonDimension } from "../../../style";
 import { CircleButtonProps } from "./type";
 import { useConfig } from "../../../config";
-import { Button } from "../index";
 
 const Circle: React.FC<CircleButtonProps> = ({
-  square,
-  circle,
   style,
-  title,
   dimension = ButtonDimension,
-  icon,
+  children,
+  type,
+  color,
+  loading,
   ...otherProps
 }) => {
   const calculatedStyles: ViewStyle = {
@@ -22,14 +23,15 @@ const Circle: React.FC<CircleButtonProps> = ({
   };
   const { gs } = useConfig();
   return (
-    <Button
-      square={false}
-      circle
-      title={!icon ? title : undefined}
-      icon={icon}
+    <BaseButton
+      loading={loading}
+      type={type}
+      color={color}
       style={[gs.ofh, calculatedStyles, style]}
       {...otherProps}
-    />
+    >
+      {loading ? <Indicator type={type} color={color} /> : children}
+    </BaseButton>
   );
 };
 
