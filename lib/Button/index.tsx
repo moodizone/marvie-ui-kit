@@ -9,7 +9,9 @@ import {
   ViewStyle,
 } from "react-native";
 
-import { BaseButtonProps, ButtonProps, CircleButtonProps } from "./type";
+import Circle from "./Circle";
+import Square from "./Square";
+import {BaseButtonProps, ButtonProps} from "./type";
 import { Typography } from "../Typography";
 import { styles } from "./styles";
 import { useConfig } from "../../config";
@@ -31,6 +33,9 @@ const BaseButton: React.FC<BaseButtonProps> = ({
   const calculatedStyles: StyleProp<ViewStyle>[] = [];
   const paletteColor = colors[color].i;
   let textColor: TextStyle = { color: "#fff" };
+
+  // gap between `indicator` and buttonText or icon
+  // `circle` or `square`
   const gap: ViewStyle = !(circle || square) ? gs.mr_1 : {};
 
   if (type === "solid") {
@@ -79,45 +84,6 @@ const BaseButton: React.FC<BaseButtonProps> = ({
 
 export const Button: ButtonProps = (props) => {
   return <BaseButton {...props} />;
-};
-export const Circle: React.FC<CircleButtonProps> = ({
-  square,
-  circle,
-  style,
-  title,
-  icon,
-  ...otherProps
-}) => {
-  return (
-    <BaseButton
-      square={false}
-      circle
-      title={!icon ? title : undefined}
-      icon={icon}
-      style={[styles.circle, style]}
-      {...otherProps}
-    />
-  );
-};
-export const Square: React.FC<CircleButtonProps> = ({
-  square,
-  circle,
-  style,
-  title,
-  icon,
-  ...otherProps
-}) => {
-  const { gs } = useConfig();
-  return (
-    <BaseButton
-      square
-      circle={false}
-      title={!icon ? title : undefined}
-      icon={icon}
-      style={[gs.ofh, style]}
-      {...otherProps}
-    />
-  );
 };
 
 Button.Square = Square;

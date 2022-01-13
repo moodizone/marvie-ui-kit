@@ -1,5 +1,5 @@
-import {StyleSheet} from "react-native";
-import {ButtonDimension} from "../../style";
+import { StyleSheet } from "react-native";
+import { ButtonDimension } from "../../style";
 
 export const styles = StyleSheet.create({
   btn: {
@@ -8,14 +8,6 @@ export const styles = StyleSheet.create({
     padding: 16,
     borderWidth: 2,
     opacity: 1,
-  },
-  square: {
-    width: ButtonDimension,
-    overflow: "hidden",
-  },
-  circle: {
-    width: ButtonDimension,
-    borderRadius: ButtonDimension / 2,
   },
   title: {
     textAlign: "center",
