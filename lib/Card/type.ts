@@ -1,10 +1,7 @@
 import React from "react";
-import { ViewProps } from "react-native";
+import { ColorValue, ImageSourcePropType, ViewProps } from "react-native";
 
-import BookedCard from "./BookedCard";
-import ContinueCard from "./ContinueCard";
-import GiftCard from "./GiftCard";
-import WakeUpCard from "./WakeUpCard";
+import { Colors } from "../../style/type";
 
 export interface BaseCardProps extends ViewProps {
   /**
@@ -12,10 +9,36 @@ export interface BaseCardProps extends ViewProps {
    */
   shadow?: boolean;
 }
+export interface BookedCards {
+  theme: Colors;
+  title: string;
+  caption?: string;
+  icon: React.ReactNode;
+}
+export interface ContinueCardProps {
+  /**
+   * whole card backgroundColor
+   */
+  color: ColorValue;
 
-export interface CardProps extends React.FC<BaseCardProps> {
-  Continue: typeof ContinueCard;
-  Gift: typeof GiftCard;
-  WakeUp: typeof WakeUpCard;
-  Booked: typeof BookedCard;
+  /**
+   * shape backgroundColor
+   */
+  shapeColor?: ColorValue;
+  icon?: React.ReactNode;
+  title: string;
+  caption: string;
+  onPress: () => void;
+}
+export interface GiftCardProps {
+  theme: Colors;
+  icon?: React.ReactNode;
+  title: string;
+  caption: string;
+}
+export interface WakeUpCardProps {
+  firstLine: string;
+  secondLine?: string;
+  image: ImageSourcePropType;
+  theme: Colors;
 }
