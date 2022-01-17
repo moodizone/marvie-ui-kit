@@ -6,4 +6,5 @@ export * from "./ProgressBar";
 export * from "./Typography";
 export * from "./Button";
 export * from "./Shape";
+export * from "./TextInput";
 export * from "../config";
