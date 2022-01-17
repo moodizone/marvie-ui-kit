@@ -13,6 +13,7 @@ import WakeUpCards from "../screens/WakeUpCard";
 import Buttons from "../screens/Buttons";
 import Typographies from "../screens/Typographies/typographies";
 import BookedCards from "../screens/BookedCards";
+import Welcome from "../screens/Welcome";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -26,12 +27,13 @@ const Router = () => {
     buttons: Buttons,
     typographies: Typographies,
     bookedCards: BookedCards,
+    welcome: Welcome,
   };
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName={ROUTES.home.name}>
+        <Stack.Navigator initialRouteName={ROUTES.welcome.name}>
           {Object.values(ROUTES).map(({ name }) => (
             <Stack.Screen
               key={name}
