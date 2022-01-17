@@ -279,7 +279,7 @@ export const CommonStyles: CommonStyle = {
   mb_5: { marginBottom: _5 },
 };
 export const ButtonDimension = 60;
-export const BaseFontSize = 14;
+export const BaseFontSize = 16;
 export const BaseLineHeight = BaseFontSize * 1.4;
 export const ThinFontWeight = "200";
 export const BoldFontWeight = "700";
