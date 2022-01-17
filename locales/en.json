@@ -4,5 +4,12 @@
   "orange": "Orange",
   "cucumber": "Cucumber",
   "clicked": "Clicked",
+  "welcome": "Welcome",
+  "signIn": "Sign in",
+  "createAnAccount": "Create an account",
+  "forgotPassword": "Forgot password?",
+  "signInToContinue": "Sign in to continue",
+  "username": "Username",
+  "password": "Password",
   "lorem": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore expedita libero quos sed tempora totam voluptates? Aliquam consectetur ex fugiat iure, minima nihil nisi quas quidem reprehenderit. Praesentium quo, soluta."
 }
