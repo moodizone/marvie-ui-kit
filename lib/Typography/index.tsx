@@ -117,8 +117,6 @@ export const Title: React.FC<TitleProps> = ({
       calculatedStyles.push(styles.h4);
       break;
     case 5:
-      calculatedStyles.push(styles.h5);
-      break;
     default:
       calculatedStyles.push(styles.h5);
   }
