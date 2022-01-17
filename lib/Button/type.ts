@@ -1,8 +1,4 @@
-import React from "react";
 import { ColorValue, TouchableOpacityProps } from "react-native";
-
-import Square from "./Square";
-import Circle from "./Circle";
 
 export type ButtonVariant = "solid" | "outlined" | "ghost";
 
@@ -35,7 +31,19 @@ export interface BaseButtonProps extends TouchableOpacityProps {
    */
   color?: ColorValue;
 }
-export interface ButtonProps extends React.FC<BaseButtonProps> {
-  Circle: typeof Circle;
-  Square: typeof Square;
+export interface CircleButtonProps extends BaseButtonProps {
+  /**
+   * - icon has higher priority than title
+   * @default equal to `ButtonDimension`
+   */
+  dimension?: number;
+
+  hasShade?: ColorValue;
+}
+export interface SquareButtonType extends BaseButtonProps {
+  /**
+   * - icon has higher priority than title
+   * @default `ButtonDimension`
+   */
+  dimension?: number;
 }

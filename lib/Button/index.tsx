@@ -1,4 +1,8 @@
 import * as React from "react";
+
+import { BaseButtonProps } from "./type";
+import Indicator from "./Indicator";
+import { useConfig } from "../../config";
 import {
   Alert,
   StyleProp,
@@ -6,15 +10,14 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-
-import Circle from "./Circle";
-import Square from "./Square";
-import { BaseButtonProps, ButtonProps } from "./type";
 import { styles } from "./styles";
-import { useConfig } from "../../config";
-import Indicator from "./Indicator";
+import { CircleButtonProps, SquareButtonType } from "./type";
+import { ButtonDimension } from "../../style";
 
-export const BaseButton: React.FC<BaseButtonProps> = ({
+// =========================================
+// Base Button
+// =========================================
+const BaseButton: React.FC<BaseButtonProps> = ({
   disabled = false,
   color,
   type = "solid",
@@ -54,6 +57,13 @@ export const BaseButton: React.FC<BaseButtonProps> = ({
   );
 };
 
+// =========================================
+// Button
+// =========================================
+export interface ButtonProps extends React.FC<BaseButtonProps> {
+  Circle: typeof Circle;
+  Square: typeof Square;
+}
 export const Button: ButtonProps = ({
   loading,
   color,
@@ -65,6 +75,68 @@ export const Button: ButtonProps = ({
     <BaseButton loading={loading} color={color} type={type} {...otherProps}>
       {loading && <Indicator type={type} color={color} />}
       {children}
+    </BaseButton>
+  );
+};
+
+// =========================================
+// Circle
+// =========================================
+const Circle: React.FC<CircleButtonProps> = ({
+  style,
+  dimension = ButtonDimension,
+  children,
+  type,
+  color,
+  loading,
+  ...otherProps
+}) => {
+  const calculatedStyles: ViewStyle = {
+    width: dimension,
+    height: dimension,
+    borderRadius: dimension,
+  };
+  const { gs } = useConfig();
+  return (
+    <BaseButton
+      loading={loading}
+      type={type}
+      color={color}
+      style={[gs.ofh, calculatedStyles, style]}
+      {...otherProps}
+    >
+      {loading ? <Indicator type={type} color={color} /> : children}
+    </BaseButton>
+  );
+};
+
+// =========================================
+// Square
+// =========================================
+const Square: React.FC<SquareButtonType> = ({
+  style,
+  dimension = ButtonDimension,
+  children,
+  loading,
+  type,
+  color,
+  ...otherProps
+}) => {
+  const calculatedStyles: ViewStyle = {
+    width: dimension,
+    height: dimension,
+    borderRadius: 12,
+  };
+  const { gs } = useConfig();
+  return (
+    <BaseButton
+      loading={loading}
+      type={type}
+      color={color}
+      style={[gs.ofh, calculatedStyles, style]}
+      {...otherProps}
+    >
+      {loading ? <Indicator type={type} color={color} /> : children}
     </BaseButton>
   );
 };
