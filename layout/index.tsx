@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Container from "../component/Layout/Container";
+import Container from "./Container";
 import ControlButtons from "./ControlButtons";
 import { useConfig } from "../config";
 

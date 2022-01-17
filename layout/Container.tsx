@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollView, ScrollViewProps } from "react-native";
-import { useConfig } from "../../config";
+import { useConfig } from "../config";
 
 const Container: React.FC<ScrollViewProps> = ({
   children,
